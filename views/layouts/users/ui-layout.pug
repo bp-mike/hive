@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title='layout template'
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="/static/bootstrap-4.5.0-dist/css/bootstrap.min.css")
+    //- look more into linking script tags
+    script(async defer src="https://buttons.github.io/buttons.js")
+
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")
+    link(rel="stylesheet" href="/static/css/ui-layout.css")
+
+
+  body
+    .header
+        
+    .container-fluid
+          block content
+          //- what to put on the other side
+            extends layout
+            block content
+
+    //- footer
+    .footer
+      span ©hive | Designed by bp mike(people are awesome)l
+      

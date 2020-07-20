@@ -1,0 +1,68 @@
+@import 'variables';
+// all elements
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: $greyDark;
+    color: $purpleDark;
+}
+// Nav-bar
+.header{
+
+    nav{
+        background: #fff;
+        // color: $purpleDark;
+        color: red;
+
+        input[type="text"]{
+            // background: transparent;
+            border: none;
+            font-size: 1.0rem;
+            color: $greenNeon;
+            padding: 10px;
+            font-weight: 10;
+            transition: all 0.3s ease-in-out;
+            height: 75%;
+            width: 300px;
+            position: relative;
+            margin-top: 1%;
+            &:hover{
+              background: $greyDark;
+              border-radius: 5px;
+            }
+            &:active{
+              background: $greyDark;
+              border-radius: 5px;
+            }
+            &::placeholder{
+              font-size: 0.9rem;
+              color: $greenNeon;
+            }
+        }
+    }
+}
+
+// Content
+.container-fluid{
+    background: $greyLight;
+    min-height: 100vh;
+}
+
+// The footer
+.footer{
+    background: $purpleDark;
+    color: white;
+    height: 30px;
+    // width: 100vw;
+    text-align: center;
+    // margin-bottom: 0;
+    padding: 5px;
+    // display: flex;
+    span{
+      color: $greyLightFont;
+  
+    }
+  }

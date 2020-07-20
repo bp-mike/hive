@@ -1,0 +1,52 @@
+body {
+  background: #f4f4f4;
+}
+
+.navbar {
+  min-height: 33px !important;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.navbar-nav li a {
+  padding-top: 6px !important;
+  padding-bottom: 0 !important;
+  height: 33px;
+}
+
+.navbar-brand {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 33px;
+}
+
+#header {
+  background: #333333;
+  color: #ffffff;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+#header .create {
+  padding-top: 20px;
+}
+
+.breadcrum {
+  background: #ccc;
+  color: #333;
+  padding: 6px;
+}
+
+.breadcrum li {
+  list-style-type: none;
+}
+
+.breadcrum a {
+  color: #333333;
+}
+
+.progress-bar {
+  background: #6d4848;
+  color: white;
+}
+/*# sourceMappingURL=t-admin.css.map */

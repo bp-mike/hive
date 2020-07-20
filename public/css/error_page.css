@@ -1,0 +1,33 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-error {
+  display: flexbox;
+  background: #ad6565;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.container-error .error {
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 300px;
+  text-align: center;
+}
+
+.container-error .error h1 {
+  font-size: 10rem;
+}
+
+.container-error .error h2 {
+  font-size: 5rem;
+}
+/*# sourceMappingURL=error_page.css.map */
