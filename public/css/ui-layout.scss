@@ -8,47 +8,83 @@
 body{
     background-color: $greyDark;
     color: $purpleDark;
+
 }
+textarea:focus, input:focus{
+  outline: none;
+}
+
 // Nav-bar
-.header{
+header{
+  display: flex;
+  flex-direction: column;
+  a{
+    text-decoration: none;
+    color: $purpleDark;
 
-    nav{
+  }
+    // navbar one
+    nav.primary-nav{
+        display:  flex;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 50px;
         background: #fff;
-        // color: $purpleDark;
-        color: red;
+        color: $purpleDark;
+        transition: top 0.3s;
+        justify-content: center;
+        align-items: center;
+        // color: red;
+        .fa{
+          color: $purpleDark;
+          font-size: 30px;
+        }
+        .logo{
+          margin-right: 10rem;
+          font-weight: 10;
+          color: $purpleDark;
+          font-size: 3rem;
+        }
 
-        input[type="text"]{
-            // background: transparent;
-            border: none;
+        .search-area{
+
+          input[type="text"]{
+            // border-color: $purpleDark;
             font-size: 1.0rem;
-            color: $greenNeon;
+            color: $purpleDark;
             padding: 10px;
             font-weight: 10;
-            transition: all 0.3s ease-in-out;
             height: 75%;
-            width: 300px;
-            position: relative;
-            margin-top: 1%;
-            &:hover{
-              background: $greyDark;
-              border-radius: 5px;
-            }
-            &:active{
-              background: $greyDark;
-              border-radius: 5px;
-            }
+            width: 500px;
+          
             &::placeholder{
               font-size: 0.9rem;
               color: $greenNeon;
             }
         }
+      }
+
+      .user-area{
+        margin-left: 10rem;
+      }
     }
+
+    // navbar two
+    nav.secondary-nav{
+      height:15px;
+      background: $purpleDark;
+      display: flex;
+    }
+
 }
 
 // Content
 .container-fluid{
     background: $greyLight;
-    min-height: 100vh;
+    min-height: 3000px;
+    padding: 0;
+    margin: 0;
 }
 
 // The footer

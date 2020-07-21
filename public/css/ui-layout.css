@@ -10,58 +10,103 @@ body {
   color: #282639;
 }
 
-.header nav {
-  background: #fff;
-  color: red;
+textarea:focus, input:focus {
+  outline: none;
 }
 
-.header nav input[type="text"] {
-  border: none;
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header a {
+  text-decoration: none;
+  color: #282639;
+}
+
+header nav.primary-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  color: #282639;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav.primary-nav .fa {
+  color: #282639;
+  font-size: 30px;
+}
+
+header nav.primary-nav .logo {
+  margin-right: 10rem;
+  font-weight: 10;
+  color: #282639;
+  font-size: 3rem;
+}
+
+header nav.primary-nav .search-area input[type="text"] {
   font-size: 1.0rem;
-  color: #92CF48;
+  color: #282639;
   padding: 10px;
   font-weight: 10;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   height: 75%;
-  width: 300px;
-  position: relative;
-  margin-top: 1%;
+  width: 500px;
 }
 
-.header nav input[type="text"]:hover {
-  background: #EAEDF3;
-  border-radius: 5px;
-}
-
-.header nav input[type="text"]:active {
-  background: #EAEDF3;
-  border-radius: 5px;
-}
-
-.header nav input[type="text"]::-webkit-input-placeholder {
+header nav.primary-nav .search-area input[type="text"]::-webkit-input-placeholder {
   font-size: 0.9rem;
   color: #92CF48;
 }
 
-.header nav input[type="text"]:-ms-input-placeholder {
+header nav.primary-nav .search-area input[type="text"]:-ms-input-placeholder {
   font-size: 0.9rem;
   color: #92CF48;
 }
 
-.header nav input[type="text"]::-ms-input-placeholder {
+header nav.primary-nav .search-area input[type="text"]::-ms-input-placeholder {
   font-size: 0.9rem;
   color: #92CF48;
 }
 
-.header nav input[type="text"]::placeholder {
+header nav.primary-nav .search-area input[type="text"]::placeholder {
   font-size: 0.9rem;
   color: #92CF48;
+}
+
+header nav.primary-nav .user-area {
+  margin-left: 10rem;
+}
+
+header nav.secondary-nav {
+  height: 15px;
+  background: #282639;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .container-fluid {
   background: #F4F6F9;
-  min-height: 100vh;
+  min-height: 3000px;
+  padding: 0;
+  margin: 0;
 }
 
 .footer {

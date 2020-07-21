@@ -7,6 +7,8 @@ html
     link(rel="stylesheet" href="/static/bootstrap-4.5.0-dist/css/bootstrap.min.css")
     //- look more into linking script tags
     script(async defer src="https://buttons.github.io/buttons.js")
+    <script src="/static/js/jquery-3.0.0.min.js"></script>
+    <script src="/static/js/main.js"></script> 
 
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")
@@ -14,8 +16,25 @@ html
 
 
   body
-    .header
-        
+    header 
+              
+        nav.primary-nav#primary-nav
+          .logo
+            a(type="button") Hive
+          .search-area             
+            <input type="text" name="" value="" placeholder="Type here to search">
+            <i type='button' class="fa fa-search search-area" aria-hidden="true"></i>
+          .user-area
+            //- phone icon
+            <i class="fa fa-shopping-cart" type="button" aria-hidden="true"></i>
+        nav.secondary-nav
+          ul
+            <li><a href="#">nze</a></li>
+            <li><a href="#">people</a></li>
+            <li><a href="#">people</a></li>
+
+          
+
     .container-fluid
           block content
           //- what to put on the other side
@@ -25,4 +44,17 @@ html
     //- footer
     .footer
       span ©hive | Designed by bp mike(people are awesome)l
-      
+    //- 
+      <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("primary-nav").style.top = "0";
+          } else {
+            document.getElementById("primary-nav").style.top = "-50px";
+          }
+          prevScrollpos = currentScrollPos;
+        }
+        </script>
+

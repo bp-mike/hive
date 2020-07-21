@@ -86,11 +86,13 @@ textarea:focus, input:focus{
   min-height: 100vh;
   background: $greyDark;
    nav{
+     
      height: 65px;
      background: #fff;
      display: flex;
     //  flex-wrap: wrap;
      justify-content: space-between;
+    //  position: fixed;
      
      .search-area{
       color: $greenNeon;
