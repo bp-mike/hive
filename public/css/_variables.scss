@@ -1,5 +1,10 @@
 // $primarytbn: rgb(240, 131, 131);
 // $textcolor:rgb(54, 16, 16);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 $purpleLight : #302043;
 $purpleDark : #282639;
 $greenNeon : #92CF48;
@@ -10,3 +15,4 @@ $greyLightFont: #bbc1c0;
 $greyLightFont2: #a5adbd;
 $orange: #f48320;
 $purple: #744bce;
+

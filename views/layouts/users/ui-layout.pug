@@ -17,44 +17,60 @@ html
 
   body
     header 
-              
-        nav.primary-nav#primary-nav
-          .logo
-            a(type="button") Hive
-          .search-area             
-            <input type="text" name="" value="" placeholder="Type here to search">
-            <i type='button' class="fa fa-search search-area" aria-hidden="true"></i>
-          .user-area
-            //- phone icon
-            <i class="fa fa-shopping-cart" type="button" aria-hidden="true"></i>
-        nav.secondary-nav
-          ul
-            <li><a href="#">nze</a></li>
-            <li><a href="#">people</a></li>
-            <li><a href="#">people</a></li>
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+      #navbarTogglerDemo01.collapse.navbar-collapse
+        a.navbar-brand(href="#") Hidden brand
+        ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+          li.nav-item.active
+            a.nav-link(href="#")
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href="#") Link
+          li.nav-item
+            a.nav-link.disabled(href="#" tabindex="-1" aria-disabled="true") Disabled
+        form.form-inline.my-2.my-lg-0
+          input.form-control.mr-sm-2(type="search" placeholder="Search" aria-label="Search")
+          button.btn.btn-outline-success.my-2.my-sm-0(type="submit") Search
 
-          
+             
+        //- nav.primary-nav#primary-nav
+        //-   .logo
+        //-     a(type="button") Hive
+        //-   .search-area             
+        //-     <input type="text" name="" value="" placeholder="Type here to search">
+        //-     <i type='button' class="fa fa-search search-area" aria-hidden="true"></i>
+        //-   .user-area
+        //-     //- phone icon
+        //-     <i class="fa fa-shopping-cart" type="button" aria-hidden="true"></i>
+        //- nav.secondary-nav
+        //-   <ul>
+        //-     <li><a href="#">nze</a></li>
+        //-     <li><a href="#">people</a></li>
+        //-     <li><a href="#">people</a></li>
+        //-     </ul>
 
-    .container-fluid
-          block content
-          //- what to put on the other side
-            extends layout
-            block content
+    
+    block content
+    #carouselExampleControls.carousel.slide(data-ride="carousel")
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src="/static/img/slider/pic.jfif" alt="image")
+        .carousel-item
+          img.d-block.w-100(src="/static/img/slider/pic.jfif" alt="image")
+        .carousel-item
+          img.d-block.w-100(src="/static/img/slider/pic.jfif" alt="imge")
+      a.carousel-control-prev(href="#carouselExampleControls" role="button" data-slide="prev")
+        span.carousel-control-prev-icon(aria-hidden="true")
+        span.sr-only Previous
+      a.carousel-control-next(href="#carouselExampleControls" role="button" data-slide="next")
+        span.carousel-control-next-icon(aria-hidden="true")
+        span.sr-only Next
+    p people are awesome
 
     //- footer
     .footer
-      span ©hive | Designed by bp mike(people are awesome)l
-    //- 
-      <script>
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
-          if (prevScrollpos > currentScrollPos) {
-            document.getElementById("primary-nav").style.top = "0";
-          } else {
-            document.getElementById("primary-nav").style.top = "-50px";
-          }
-          prevScrollpos = currentScrollPos;
-        }
-        </script>
-
+      span ©hive | Designed by onyango mike(bpmike)
+    

@@ -16,8 +16,8 @@ textarea:focus, input:focus{
 
 // Nav-bar
 header{
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   a{
     text-decoration: none;
     color: $purpleDark;
@@ -72,17 +72,37 @@ header{
 
     // navbar two
     nav.secondary-nav{
-      height:15px;
+      height:20px;
       background: $purpleDark;
       display: flex;
+      position: fixed;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0;
+
+      ul{
+        
+        display: flex;
+        
+        li{
+          a{
+            color: #fff;
+            margin: 5px;
+            padding: 5px;
+
+          }          
+        }
+      }
     }
 
 }
 
 // Content
+/static/img/slider/pic.jfif
 .container-fluid{
     background: $greyLight;
-    min-height: 3000px;
+    min-height: 100vh;
     padding: 0;
     margin: 0;
 }

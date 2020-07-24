@@ -1,7 +1,8 @@
 // dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
-// instantiations
+const layouts = require('./routes/layouts')
+ // instantiations
 const app = express();
 
 
@@ -10,16 +11,18 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'pug');
 app.set('views', './views');
 app.use('/static',express.static('public'));
+app.use('/',layouts )
 
 // middlreware
 
 // app.use('/home', (req, res,next) =>{
 //   console.log('A new request received at ' + Date.now());
 // });
+
 // Routes
-app.get('/',(req,res) =>{
-  res.send('people are awesome')
-});
+// app.get('/',(req,res) =>{
+//   res.send('people are awesome')
+// });
 app.get('/home', (req, res) =>{
   res.render('two')
 })
@@ -28,9 +31,9 @@ app.get('/home', (req, res) =>{
 app.get('/dash',(req,res) =>{
   res.render('layouts/admins/dash_layout')
 });
-app.get('/ui', (req, res) =>{
-  res.render('layouts/users/ui-layout');
-});
+// app.get('/ui', (req, res) =>{
+//   res.render('ui-layout');
+// });
 
 app.get('*',(req,res) =>{
   // res.send('404! This is na invalid url.')
@@ -38,6 +41,7 @@ app.get('*',(req,res) =>{
 })
 
 // bootstrapping server
-app.listen(3000, ()=>{
-  console.log('listening to port 3k');
-})
+app.listen(3000)
+// ()=>{
+//   console.log('listening to port 3k');
+// })
