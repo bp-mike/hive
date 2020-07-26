@@ -1,0 +1,244 @@
+@import 'variables';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    color: $purpleDark;
+}
+/*___________cards___________*/
+.card{
+    color: $purpleDark;
+    border: none;
+    a{
+      
+        &:hover{
+            color: $greenNeon;
+            text-decoration: none;
+            box-shadow: 2px 3px 15px #999;
+            transform: translateY(-1px);
+           }
+    }
+}
+/*___________end of cards________*/ 
+/*_______offset____________*/
+.offset:before{
+    display: block;
+    content: "";
+    height: 4rem;
+    margin-top: -4rem;
+}
+/*_______end of offset__________*/ 
+
+/*nav bar*/ 
+.navbar{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    background: rgba(0,0,0,0.6) !important;
+    .search-area{
+        margin: 0 auto;
+        // margin-left: 7rem;
+        font-size: 2rem;
+        border-radius: 5px;
+        input{
+            color: white;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid $greenNeon;
+            &::placeholder{
+                color: $greenNeon;
+                font-size: 1.2rem;
+            }
+        }
+        .fa{
+            background: transparent;
+            outline: none;
+            border-radius: 50%;
+            border: $greenNeon;           
+        }
+        
+    }
+}
+textarea:focus, input:focus{
+    outline: none;
+  }
+.navbar-brand{
+    h1{
+        height: 2rem;
+        color: $greenNeon;
+    }
+}
+.navbar-nav {
+    li{
+        padding: .7rem;
+    }
+}
+.navbar-dark{
+    .navbar-nav {
+        li{
+            padding-right: .7rem;
+            padding-top: .2rem;
+            padding-bottom: .2rem;
+        }
+        .nav-link{
+            color: white;
+            padding-top: .8rem;
+            &.active,&:hover{
+                color: $greenNeon;
+            }
+        }
+    }
+}
+/*____end of nav bar__________*/
+
+/*____________landing page__________*/ 
+
+.home-inner{
+    margin-top: 4rem;
+    background-image: url(/public/img/slider/five.jpg);
+}
+.caption{
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 38%;
+    text-transform: uppercase;
+    color: #fff;
+    // text-transform: uppercase;
+    z-index: 1;
+    h1{
+        font-size: 3.8rem;
+        font-weight: 700;
+        letter-spacing: .3rem;
+        text-shadow: .1re .1rem .8rem black;
+        padding-bottom: 1rem;
+    }
+    h3{
+        font-size: 2rem;
+        text-shadow: .1re .1rem .8rem black;
+        padding-bottom: 1.6rem;
+    }
+}
+/*____________end of landing page_______________*/ 
+
+/*_____________categories section____________________*/ 
+.narrow{
+    width: 75%;
+    margin:1.5rem auto;
+    padding-top: 2rem;
+   
+    h1{
+        font-size: 2.4rem;
+    }
+    a{
+        border-width: medium;
+        border-radius: 0;
+        font-size: 1.2rem;
+        padding: .6rem 1.2rem;
+        margin: 1rem;
+        color: $purpleDark;
+
+
+    }
+}
+/*_____________end of categories section____________________*/ 
+
+.heading{
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 1.9rem;
+    text-transform: uppercase;
+}
+.heading-underline{
+    width: 3rem;
+    height: .2rem;
+    background: $greenNeon;
+    margin: 0 auto 3rem;
+}
+.fa{
+    color: $greenNeon;
+}
+
+/*_____________features section_____________________*/ 
+.jumbotron{
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+
+
+/*_____________end of features section_____________________*/ 
+
+
+
+/*__________ footer_________*/
+
+footer{
+    background: #40474e;
+    color: white;
+    padding: 2rem 0 2rem;
+    margin-top: 0;
+    img{
+        height: 3rem;
+        margin: 1.5rem 0;
+    }
+    h1{
+        color: $greenNeon;
+    }
+    a{
+        color: white;
+    }
+    .fa{
+        color: white;
+        font-size: 1.6rem;
+        margin: 1.2rem .5rem 0 0;
+        &:hover{
+            color: $greenNeon;
+        }
+    }
+    hr{
+        width: 100%;
+        border-top: .2rem solid grey;
+        margin-top: 3rem;
+    }
+}
+/*_________end of footer___________*/ 
+
+
+
+@media(max-width: 767px){
+
+.caption{
+  
+        h1{
+            font-size: 2.3rem;
+            letter-spacing: .15rem;
+            padding-bottom: .5rem;
+        }
+        h3{
+            font-size: 1.2rem;
+            padding-bottom: 1.2rem;
+        }   
+    }
+
+.narrow{
+  h1{
+      font-size: 1.5rem;
+   }
+}
+input{
+width: 12rem;
+font-size: 1rem;
+    &::placeholder{
+        font-size: 1rem;
+    }
+}
+
+    /*____________end of landing page_______________*/ 
+
+}
+

@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  color: #282639;
+}
+
+/*___________cards___________*/
+.card {
+  color: #282639;
+  border: none;
+}
+
+.card a:hover {
+  color: #92CF48;
+  text-decoration: none;
+  -webkit-box-shadow: 2px 3px 15px #999;
+          box-shadow: 2px 3px 15px #999;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+
+/*___________end of cards________*/
+/*_______offset____________*/
+.offset:before {
+  display: block;
+  content: "";
+  height: 4rem;
+  margin-top: -4rem;
+}
+
+/*_______end of offset__________*/
+/*nav bar*/
+.navbar {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .1rem;
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.navbar .search-area {
+  margin: 0 auto;
+  font-size: 2rem;
+  border-radius: 5px;
+}
+
+.navbar .search-area input {
+  color: white;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #92CF48;
+}
+
+.navbar .search-area input::-webkit-input-placeholder {
+  color: #92CF48;
+  font-size: 1.2rem;
+}
+
+.navbar .search-area input:-ms-input-placeholder {
+  color: #92CF48;
+  font-size: 1.2rem;
+}
+
+.navbar .search-area input::-ms-input-placeholder {
+  color: #92CF48;
+  font-size: 1.2rem;
+}
+
+.navbar .search-area input::placeholder {
+  color: #92CF48;
+  font-size: 1.2rem;
+}
+
+.navbar .search-area .fa {
+  background: transparent;
+  outline: none;
+  border-radius: 50%;
+  border: #92CF48;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+.navbar-brand h1 {
+  height: 2rem;
+  color: #92CF48;
+}
+
+.navbar-nav li {
+  padding: .7rem;
+}
+
+.navbar-dark .navbar-nav li {
+  padding-right: .7rem;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  padding-top: .8rem;
+}
+
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover {
+  color: #92CF48;
+}
+
+/*____end of nav bar__________*/
+/*____________landing page__________*/
+.home-inner {
+  margin-top: 4rem;
+  background-image: url(/public/img/slider/five.jpg);
+}
+
+.caption {
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 38%;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 1;
+}
+
+.caption h1 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  letter-spacing: .3rem;
+  text-shadow: .1re .1rem .8rem black;
+  padding-bottom: 1rem;
+}
+
+.caption h3 {
+  font-size: 2rem;
+  text-shadow: .1re .1rem .8rem black;
+  padding-bottom: 1.6rem;
+}
+
+/*____________end of landing page_______________*/
+/*_____________categories section____________________*/
+.narrow {
+  width: 75%;
+  margin: 1.5rem auto;
+  padding-top: 2rem;
+}
+
+.narrow h1 {
+  font-size: 2.4rem;
+}
+
+.narrow a {
+  border-width: medium;
+  border-radius: 0;
+  font-size: 1.2rem;
+  padding: .6rem 1.2rem;
+  margin: 1rem;
+  color: #282639;
+}
+
+/*_____________end of categories section____________________*/
+.heading {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1.9rem;
+  text-transform: uppercase;
+}
+
+.heading-underline {
+  width: 3rem;
+  height: .2rem;
+  background: #92CF48;
+  margin: 0 auto 3rem;
+}
+
+.fa {
+  color: #92CF48;
+}
+
+/*_____________features section_____________________*/
+.jumbotron {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/*_____________end of features section_____________________*/
+/*__________ footer_________*/
+footer {
+  background: #40474e;
+  color: white;
+  padding: 2rem 0 2rem;
+  margin-top: 0;
+}
+
+footer img {
+  height: 3rem;
+  margin: 1.5rem 0;
+}
+
+footer h1 {
+  color: #92CF48;
+}
+
+footer a {
+  color: white;
+}
+
+footer .fa {
+  color: white;
+  font-size: 1.6rem;
+  margin: 1.2rem .5rem 0 0;
+}
+
+footer .fa:hover {
+  color: #92CF48;
+}
+
+footer hr {
+  width: 100%;
+  border-top: .2rem solid grey;
+  margin-top: 3rem;
+}
+
+/*_________end of footer___________*/
+@media (max-width: 767px) {
+  .caption h1 {
+    font-size: 2.3rem;
+    letter-spacing: .15rem;
+    padding-bottom: .5rem;
+  }
+  .caption h3 {
+    font-size: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+  .narrow h1 {
+    font-size: 1.5rem;
+  }
+  input {
+    width: 12rem;
+    font-size: 1rem;
+  }
+  input::-webkit-input-placeholder {
+    font-size: 1rem;
+  }
+  input:-ms-input-placeholder {
+    font-size: 1rem;
+  }
+  input::-ms-input-placeholder {
+    font-size: 1rem;
+  }
+  input::placeholder {
+    font-size: 1rem;
+  }
+  /*____________end of landing page_______________*/
+}
+/*# sourceMappingURL=style.css.map */

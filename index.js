@@ -29,19 +29,12 @@ app.get('/home', (req, res) =>{
 
 // dash board..
 app.get('/dash',(req,res) =>{
-  res.render('layouts/admins/dash_layout')
+  res.sendFile('layouts/admins/dash.html')
 });
-// app.get('/ui', (req, res) =>{
-//   res.render('ui-layout');
-// });
 
 app.get('*',(req,res) =>{
-  // res.send('404! This is na invalid url.')
   res.render('layouts/error_page')
 })
 
-// bootstrapping server
 app.listen(3000)
-// ()=>{
-//   console.log('listening to port 3k');
-// })
+
