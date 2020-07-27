@@ -1,0 +1,6 @@
+@mixin margin-top() {
+    margin-top: 7rem;
+}
+.table-section{
+    @include margin-top();
+}

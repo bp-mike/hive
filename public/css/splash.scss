@@ -1,0 +1,89 @@
+@import 'variables';
+
+body{
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: $purpleLight;
+}
+.list-group{
+    width: 30vw;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    section{
+        border: 1px solid $greenNeon;
+        border-radius: 3px;
+    }
+    a{
+        &:hover{
+            color: $greenNeon;
+            background: $purpleDark;
+            transition: ease-in-out .3s;
+        }
+    }
+    
+    .active{
+        background: $purpleDark;
+        border: none;
+    }
+    .fa-user-circle{
+        font-size: 7rem;
+        color: red;
+        margin: 0 auto;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+
+    }
+    .fa{
+        color: $greenNeon;
+        font-weight: bold;
+    }
+    td{
+        padding-left: 1.2rem;
+
+    }
+}
+
+/*_____________logins_________________*/ 
+.card{
+    margin: 0 auto;
+    color: $purpleDark;
+    margin-top: 7rem;
+    padding: 1rem;
+    border: 1px groove $greenNeon;
+
+    input{
+        &::placeholder{
+            color: $greenNeon;
+        }
+    }
+    .card-header{
+        text-align: center;
+        font-size: 2rem;
+        padding-bottom: .1rem;
+        border: 1px groove $greenNeon
+    }
+    .btn{
+
+        background: $purpleLight;
+        color: $greenNeon;
+        float: right;
+        margin-right: 1rem;
+        &:hover{
+            background: $purpleDark;
+        }
+    }
+
+    
+}
+/*_____________logins_________________*/
+
+@media(max-width: 767px){
+    
+    .list-group{
+        width: 60vw;
+    }
+
+}
+    

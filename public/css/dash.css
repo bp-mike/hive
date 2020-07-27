@@ -211,7 +211,7 @@ textarea:focus, input:focus {
   border-radius: 50%;
 }
 
-/*modal signout*/
+/*__________________modal signout____________*/
 .sign-out-model .modal-dialog .modal-content {
   text-align: center;
 }
@@ -245,8 +245,24 @@ textarea:focus, input:focus {
   background: red;
 }
 
-/*end of modal signout*/
-/* cards*/
+/*_______________end of modal signout____________*/
+/*_______________add agent modal_____________*/
+.add_agent_model {
+  text-align: left;
+  padding: 2rem;
+}
+
+.add_agent_model .modal-dialog .modal-content .heading {
+  font-size: 4rem;
+  color: red;
+}
+
+.add_agent_model .modal-dialog .modal-content form {
+  padding: 2rem;
+}
+
+/*______________end of agent model__________*/
+/*______________cards______________________*/
 .card-section .container-fluid .row .col-lg-9 {
   margin-left: auto;
 }
@@ -311,8 +327,8 @@ textarea:focus, input:focus {
   color: #92CF48;
 }
 
-/* end of cards*/
-/*table section*/
+/*_____________________end of cards___________________*/
+/*___________________table section____________________*/
 .table-section .container-fluid .row .col-lg-9 {
   margin-left: auto;
 }
@@ -339,21 +355,17 @@ textarea:focus, input:focus {
   font-weight: bold;
 }
 
-.table-section .container-fluid .row .col-lg-9 .row .col-12 .pagination {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+/*____________end of table section_______________*/
+footer {
+  background: white;
+  font-size: .7rem;
+  color: #92CF48;
+  z-index: 2;
+  width: 100vw;
+  padding: 1rem;
+  border-top: 1px groove #92CF48;
 }
 
-.table-section .container-fluid .row .col-lg-9 .row .col-12 .pagination li a {
-  color: #282639;
-}
-
-.table-section .container-fluid .row .col-lg-9 .row .col-12 .pagination .page-item1 .active {
-  background: #92CF48;
-}
-
-/*end of table section*/
 @media (max-width: 768px) {
   body {
     margin: 0;
@@ -377,12 +389,4 @@ textarea:focus, input:focus {
   }
   /* end of cards*/
 }
-
-/* end of navbar */
-/* task list */
-.task-border {
-  border-left: 3px solid #f66436;
-}
-
-/* end of task list */
 /*# sourceMappingURL=dash.css.map */

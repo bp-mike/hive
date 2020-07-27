@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #302043;
+}
+
+.list-group {
+  width: 30vw;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+}
+
+.list-group section {
+  border: 1px solid #92CF48;
+  border-radius: 3px;
+}
+
+.list-group a:hover {
+  color: #92CF48;
+  background: #282639;
+  -webkit-transition: ease-in-out .3s;
+  transition: ease-in-out .3s;
+}
+
+.list-group .active {
+  background: #282639;
+  border: none;
+}
+
+.list-group .fa-user-circle {
+  font-size: 7rem;
+  color: red;
+  margin: 0 auto;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.list-group .fa {
+  color: #92CF48;
+  font-weight: bold;
+}
+
+.list-group td {
+  padding-left: 1.2rem;
+}
+
+/*_____________logins_________________*/
+.card {
+  margin: 0 auto;
+  color: #282639;
+  margin-top: 7rem;
+  padding: 1rem;
+  border: 1px groove #92CF48;
+}
+
+.card input::-webkit-input-placeholder {
+  color: #92CF48;
+}
+
+.card input:-ms-input-placeholder {
+  color: #92CF48;
+}
+
+.card input::-ms-input-placeholder {
+  color: #92CF48;
+}
+
+.card input::placeholder {
+  color: #92CF48;
+}
+
+.card .card-header {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: .1rem;
+  border: 1px groove #92CF48;
+}
+
+.card .btn {
+  background: #302043;
+  color: #92CF48;
+  float: right;
+  margin-right: 1rem;
+}
+
+.card .btn:hover {
+  background: #282639;
+}
+
+/*_____________logins_________________*/
+@media (max-width: 767px) {
+  .list-group {
+    width: 60vw;
+  }
+}
+/*# sourceMappingURL=splash.css.map */

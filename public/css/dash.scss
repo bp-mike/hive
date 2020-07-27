@@ -6,6 +6,7 @@ body{
     color: $purpleDark;
 }
 
+
 textarea:focus, input:focus{
   outline: none;
   background: $greyDark;
@@ -193,7 +194,7 @@ textarea:focus, input:focus{
     border-radius: 50%;
   }
 
-/*modal signout*/ 
+/*__________________modal signout____________*/ 
 .sign-out-model{
 
   .modal-dialog{
@@ -228,11 +229,34 @@ textarea:focus, input:focus{
     }
   }
 }
-/*end of modal signout*/ 
+/*_______________end of modal signout____________*/ 
 
+
+/*_______________add agent modal_____________*/
+
+.add_agent_model{
+  text-align: left;
+  padding: 2rem;
+  .modal-dialog{
+    // color: $greenNeon;
+    .modal-content{
+  
+      .heading{
+        font-size: 4rem;
+        color: red;
+      }
+      form{
+        padding: 2rem;
+      }
+
+    }
+  }
+}
+
+/*______________end of agent model__________*/ 
 
   
-/* cards*/
+/*______________cards______________________*/
 .card-section{
   .container-fluid{
     .row{
@@ -286,11 +310,11 @@ textarea:focus, input:focus{
     
   }
 } 
-/* end of cards*/ 
+/*_____________________end of cards___________________*/ 
 
 
 
-/*table section*/
+/*___________________table section____________________*/
 .table-section{
   .container-fluid{
     .row{
@@ -320,22 +344,22 @@ textarea:focus, input:focus{
               // }
             }
 
-            .pagination{
-              justify-content: center;
+            // .pagination{
+            //   justify-content: center;
               
-              li{
-                a{
-                  color: $purpleDark;                                
-                }
-              }
-              .page-item1{
+            //   li{
+            //     a{
+            //       color: $purpleDark;                                
+            //     }
+            //   }
+            //   .page-item1{
                 
-                .active{
-                  background: $greenNeon;
-                }
-              }
+            //     .active{
+            //       background: $greenNeon;
+            //     }
+            //   }
               
-            }
+            // }
            
           }
           
@@ -344,7 +368,16 @@ textarea:focus, input:focus{
     }    
   }
 }
-/*end of table section*/ 
+/*____________end of table section_______________*/
+footer{
+  background: white;
+  font-size: .7rem;
+  color: $greenNeon;
+  z-index: 2;
+  width: 100vw;
+  padding: 1rem;
+  border-top: 1px groove $greenNeon;
+} 
 
 
 
@@ -385,16 +418,7 @@ body{
 /* end of cards*/ 
 
 
-  }
-
-  /* end of navbar */
-  
-  
-  /* task list */
-  .task-border {
-    border-left: 3px solid #f66436;
-  }
-  /* end of task list */
+}
   
   
   
