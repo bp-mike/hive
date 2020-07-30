@@ -4,6 +4,7 @@ body{
     background: $greyDark;
     font-family: 'Montserrat', sans-serif;
     color: $purpleDark;
+    // overflow: scroll;
 }
 
 
@@ -240,13 +241,34 @@ textarea:focus, input:focus{
   .modal-dialog{
     // color: $greenNeon;
     .modal-content{
-  
+      border: 2px groove $greenNeon;
       .heading{
-        font-size: 4rem;
-        color: red;
+        font-size: 2rem;
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: .2rem;
+        color: $purpleDark;
       }
       form{
         padding: 2rem;
+        .btn{
+          background: $purpleDark;
+          color: $greenNeon;
+          &:hover{
+            background-color: $greenNeon;
+            color: $purpleDark;
+          }          
+        }
+        // select{
+        //   option{
+        //     // background: $greenNeon;
+        //     &:hover{
+        //       background: $greenNeon;
+        //       color: ;
+        //     }
+        //   }
+        // }
+
       }
 
     }
@@ -326,41 +348,41 @@ textarea:focus, input:focus{
             text-align: center;
             h3{
               margin-bottom: .2rem;
+              margin-left: 4rem;
             }
+            .table-header{
+              display: flex;
+              justify-content: space-between;
+              
+              .btn{
+                  margin-right: 5rem;
+                  background: $purpleDark;
+                  color: $greenNeon;
+                  margin-bottom: .3rem;
+                  &:hover{
+                      background: $greenNeon;
+                      color: $purpleDark;
+                  }
+              }
+          }
             
             .table1{
               color:$purpleDark;
               background: #fff;
+              tbody{
+                tr{
+                  cursor: pointer;
+                }
+              }
               button{
                 background-color: $greenNeon;
                 color: $purpleDark;
               }
               thead{
                 font-weight: bold;
-                // background: #fff;
+                
               }
-              // tbody{
-                
-              // }
             }
-
-            // .pagination{
-            //   justify-content: center;
-              
-            //   li{
-            //     a{
-            //       color: $purpleDark;                                
-            //     }
-            //   }
-            //   .page-item1{
-                
-            //     .active{
-            //       background: $greenNeon;
-            //     }
-            //   }
-              
-            // }
-           
           }
           
         }
@@ -368,6 +390,29 @@ textarea:focus, input:focus{
     }    
   }
 }
+// __________table for showing agent details
+.table2{
+  padding: 2rem;
+  color: $purpleDark;
+  tr{
+    padding: 7rem;
+  }
+  td, th{
+    padding: 1rem;
+    width: auto;
+    border-bottom: 1px groove $greenNeon;
+
+  }
+  button{
+    background: $purpleDark;
+    color: $greenNeon;
+    &:hover{
+      background: $greenNeon;
+      color: $purpleDark;
+    }
+  }
+}
+
 /*____________end of table section_______________*/
 footer{
   background: white;

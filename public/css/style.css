@@ -30,6 +30,8 @@ body {
           box-shadow: 2px 3px 15px #999;
   -webkit-transform: translateY(-1px);
           transform: translateY(-1px);
+  -webkit-transition: ease-in-out .3s;
+  transition: ease-in-out .3s;
 }
 
 /*___________end of cards________*/
@@ -104,6 +106,18 @@ textarea:focus, input:focus {
   padding: .7rem;
 }
 
+.navbar-dark .dropdown-menu {
+  display: none;
+  margin-top: .6rem;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.navbar-dark .dropdown-menu .dropdown-item {
+  background: none;
+  padding: 0;
+}
+
 .navbar-dark .navbar-nav li {
   padding-right: .7rem;
   padding-top: .2rem;
@@ -153,7 +167,7 @@ textarea:focus, input:focus {
 /*____________end of landing page_______________*/
 /*_____________categories section____________________*/
 .narrow {
-  width: 75%;
+  width: 95%;
   margin: 1.5rem auto;
   padding-top: 2rem;
 }
@@ -190,13 +204,58 @@ textarea:focus, input:focus {
   color: #92CF48;
 }
 
-/*_____________features section_____________________*/
+/*_____________ popular pdct section_____________________*/
 .jumbotron {
   margin-bottom: 0;
   border-radius: 0;
 }
 
-/*_____________end of features section_____________________*/
+.most-popular {
+  overflow: hidden;
+  padding: .2rem;
+  padding-left: 3.4rem;
+}
+
+.most-popular .prev {
+  position: absolute;
+  font-size: 4rem;
+  margin-top: 5rem;
+  margin-left: 1rem;
+  padding: 1rem;
+  opacity: .4;
+  cursor: pointer;
+}
+
+.most-popular .prev:hover {
+  opacity: 1;
+}
+
+.most-popular .next {
+  position: absolute;
+  right: 0;
+  font-size: 4rem;
+  margin-top: 5rem;
+  margin-right: 9rem;
+  padding: 1rem;
+  opacity: .4;
+  cursor: pointer;
+}
+
+.most-popular .next:hover {
+  opacity: 1;
+}
+
+.product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: .5rem;
+  background: #fff;
+  width: 15rem;
+  height: 15rem;
+}
+
+/*_____________end of popular pdct section_____________________*/
 /*__________ footer_________*/
 footer {
   background: #40474e;
@@ -245,6 +304,9 @@ footer hr {
     font-size: 1.2rem;
     padding-bottom: 1.2rem;
   }
+  .narrow {
+    width: 100%;
+  }
   .narrow h1 {
     font-size: 1.5rem;
   }
@@ -263,6 +325,18 @@ footer hr {
   }
   input::placeholder {
     font-size: 1rem;
+  }
+  .most-popular .prev {
+    font-size: 3rem;
+    opacity: 1;
+    left: 0;
+    margin-left: 0;
+  }
+  .most-popular .next {
+    font-size: 3rem;
+    opacity: 1;
+    right: 0;
+    margin-right: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

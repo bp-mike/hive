@@ -2,23 +2,27 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const layouts = require('./routes/layouts');
+const admin_routes = require('./routes/admin_routes');
+const user_routes = require('./routes/user_routes');
 const mongoose = require('mongoose');
 require('dotenv').config();
 require('./models/agent_registration');
 const passport = require('passport');
+
 const expressSession = require('express-session')({
   secret: 'secret',
   resave: false,
   saveUninitialized: false
 });
-
 const path = require('path');
 
-//_____________instantiations
+//_____________init app
 const app = express();
 
+// __________ configurations
+// __________ view html files
 var view = "./views/"
-//______________configurations
+//______________view pug files
 app.set('view engine', 'pug');
 app.set('views', './views');
 
@@ -47,17 +51,19 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, "")));
 
   //_________________routes
-  app.use('/home',layouts )
-
+  app.use('/', user_routes);
+  app.use('/dash', admin_routes);
+  app.use('/layouts',layouts )
   // app.post('/register', (req, res) =>{
   //   res.send('people are awesome')
   //   console.log(req.body);
   // })
+ 
 
 
 //______________error page.
 app.get('*',(req,res) =>{
-  res.render('layouts/error_page')
+  res.render('error_page')
 })
 
 app.listen(3000)

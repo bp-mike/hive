@@ -15,16 +15,30 @@ router.get('/dash',(req,res) =>{
   //   res.sendFile('layouts/admins/SalesAgent_login.html' ,{root:view})
   // });
   
-// 
-router.post('/register', (req, res) =>{
+//________________admin
+router.post('/register', async (req, res) =>{
     // console.log(req.body);
     const registration = new adminRegistration(req.body);
-    registration.save()
-      .then(() => { res.send('Thank you for your registration!'); })
-      .catch((err) => {
-        console.log(err);
-        res.send('Sorry! Something went wrong.');
-      });
+    try{
+      await registration.save()
+      // res.send('Thank you for your registration!')
+      res.sendFile('layouts/admins/users_Agents.html',{root:view})
+    }catch (err) {
+      res.send("Sorry! Something went wrong.");
+      console.log(err)
+   }
 })
+
+router.get('/layouts/admins/users_Agents.html', async (req, res) => {
+  try {
+    let items = await Registration.find()
+    // if (req.query.gender) {
+    //   items = await Registration.find({ gender: req.query.gender })
+    // }
+    res.sendFile('/layouts/admins/users_Agents.html', { users: items })
+  } catch (err) {
+    res.status(400).send("unable to find items in the database");
+  }
+});
 
 module.exports=router;

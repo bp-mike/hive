@@ -19,6 +19,7 @@ body{
             text-decoration: none;
             box-shadow: 2px 3px 15px #999;
             transform: translateY(-1px);
+            transition: ease-in-out .3s;
            }
     }
 }
@@ -78,6 +79,16 @@ textarea:focus, input:focus{
     }
 }
 .navbar-dark{
+    .dropdown-menu{
+        display: none;
+        margin-top: .6rem;
+        border-radius: 0;
+        background: rgba(0,0,0,0.6);
+        .dropdown-item{
+            background: none;
+            padding: 0;
+        }
+    }
     .navbar-nav {
         li{
             padding-right: .7rem;
@@ -127,7 +138,7 @@ textarea:focus, input:focus{
 
 /*_____________categories section____________________*/ 
 .narrow{
-    width: 75%;
+    width: 95%;
     margin:1.5rem auto;
     padding-top: 2rem;
    
@@ -141,8 +152,6 @@ textarea:focus, input:focus{
         padding: .6rem 1.2rem;
         margin: 1rem;
         color: $purpleDark;
-
-
     }
 }
 /*_____________end of categories section____________________*/ 
@@ -163,15 +172,58 @@ textarea:focus, input:focus{
     color: $greenNeon;
 }
 
-/*_____________features section_____________________*/ 
+/*_____________ popular pdct section_____________________*/ 
 .jumbotron{
     margin-bottom: 0;
     border-radius: 0;
 }
+.most-popular{
+    overflow: hidden;
+    padding: .2rem;
+    padding-left: 3.4rem;
+    .prev{
+        position: absolute;
+        font-size: 4rem;
+        margin-top: 5rem;
+        margin-left: 1rem;
+        // width: auto;
+        // border-radius: 50%;
+        // background: $greyDark;
+        padding: 1rem;
+        opacity: .4;
+        cursor: pointer;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    .next{
+        position: absolute;
+        right: 0;
+        font-size: 4rem;
+        margin-top: 5rem;
+        margin-right: 9rem;
+        // width: auto;
+        // border-radius: 50%;
+        // background: $greyDark;
+        padding: 1rem;
+        opacity: .4;
+        cursor: pointer;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+.product{
+    display: flex;
+    margin: .5rem;
+    background: #fff;
+    width: 15rem;
+    height: 15rem;
+}
 
 
 
-/*_____________end of features section_____________________*/ 
+/*_____________end of popular pdct section_____________________*/ 
 
 
 
@@ -226,6 +278,7 @@ footer{
     }
 
 .narrow{
+    width: 100%;
   h1{
       font-size: 1.5rem;
    }
@@ -238,6 +291,20 @@ font-size: 1rem;
     }
 }
 
+.most-popular{
+    .prev{
+        font-size: 3rem;
+        opacity:1;
+        left: 0;
+        margin-left: 0;
+    }
+    .next{
+        font-size: 3rem;
+        opacity:1;
+        right: 0;
+        margin-right: 0;
+    }
+}
 
 
 }
