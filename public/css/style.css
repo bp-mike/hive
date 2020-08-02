@@ -5,6 +5,19 @@
           box-sizing: border-box;
 }
 
+.products .narrow .card-deck {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.products .narrow .card-deck .card {
+  min-width: 10rem;
+  max-width: 10rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -108,7 +121,8 @@ textarea:focus, input:focus {
 
 .navbar-dark .dropdown-menu {
   display: none;
-  margin-top: .6rem;
+  margin-top: .5rem;
+  border-top: none;
   border-radius: 0;
   background: rgba(0, 0, 0, 0.6);
 }
@@ -116,6 +130,14 @@ textarea:focus, input:focus {
 .navbar-dark .dropdown-menu .dropdown-item {
   background: none;
   padding: 0;
+}
+
+.navbar-dark .dropdown {
+  height: 100%;
+}
+
+.navbar-dark .dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .navbar-dark .navbar-nav li {
@@ -258,7 +280,7 @@ textarea:focus, input:focus {
 /*_____________end of popular pdct section_____________________*/
 /*__________ footer_________*/
 footer {
-  background: #40474e;
+  background: #282639;
   color: white;
   padding: 2rem 0 2rem;
   margin-top: 0;

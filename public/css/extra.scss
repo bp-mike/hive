@@ -1,3 +1,4 @@
+@import 'variables';
 @mixin margin-top() {
     margin-top: 7rem;
 }
@@ -5,3 +6,17 @@
     @include margin-top();
 }
 
+.edit_form{
+width: 60vw;
+text-align: left;
+ .btn{
+     background: $purpleDark;
+     color:$greenNeon;
+     margin: 1rem;
+
+     &:hover{
+         background: $greenNeon;
+         color: $purpleDark;
+     }
+ }
+}

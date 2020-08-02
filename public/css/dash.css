@@ -268,9 +268,14 @@ textarea:focus, input:focus {
   padding: 2rem;
 }
 
+.add_agent_model .modal-dialog .modal-content form radio {
+  margin: 2rem;
+}
+
 .add_agent_model .modal-dialog .modal-content form .btn {
   background: #282639;
   color: #92CF48;
+  margin: 1rem;
 }
 
 .add_agent_model .modal-dialog .modal-content form .btn:hover {

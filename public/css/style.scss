@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'catagories';
 *{
     margin: 0;
     padding: 0;
@@ -81,12 +82,21 @@ textarea:focus, input:focus{
 .navbar-dark{
     .dropdown-menu{
         display: none;
-        margin-top: .6rem;
+        margin-top: .5rem;
+        border-top: none;
         border-radius: 0;
         background: rgba(0,0,0,0.6);
         .dropdown-item{
             background: none;
             padding: 0;
+        }
+    }
+    .dropdown{
+        height: 100%;
+        &:hover{
+            .dropdown-menu{
+                display: block;
+            }
         }
     }
     .navbar-nav {
@@ -230,7 +240,7 @@ textarea:focus, input:focus{
 /*__________ footer_________*/
 
 footer{
-    background: #40474e;
+    background: $purpleDark;
     color: white;
     padding: 2rem 0 2rem;
     margin-top: 0;

@@ -1,4 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .table-section {
   margin-top: 7rem;
+}
+
+.edit_form {
+  width: 60vw;
+  text-align: left;
+}
+
+.edit_form .btn {
+  background: #282639;
+  color: #92CF48;
+  margin: 1rem;
+}
+
+.edit_form .btn:hover {
+  background: #92CF48;
+  color: #282639;
 }
 /*# sourceMappingURL=extra.css.map */

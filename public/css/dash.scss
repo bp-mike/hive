@@ -251,9 +251,13 @@ textarea:focus, input:focus{
       }
       form{
         padding: 2rem;
+        radio{
+          margin: 2rem;
+        }
         .btn{
           background: $purpleDark;
           color: $greenNeon;
+          margin: 1rem;
           &:hover{
             background-color: $greenNeon;
             color: $purpleDark;

@@ -4,17 +4,41 @@ const router = express.Router();
 
 //_________ bringing in the models
 const AdminRegistration = require('../models/agent_registration');
+const Product =  require('../models/add_products');
 
 router.get('/', (req, res)=>{
     res.render('admins/dash')
   })
 
-//_________ posting data to the db
+
+router.get('/layout', (req,res)=>{
+  res.render('admins/layout')
+})
+
+router.get('/pdts_layout', (req,res)=>{
+  res.render('admins/pdts_layout')
+})
+
+// _______ products page
+
+//_________ posting agent to the db
 router.post('/register', async (req, res) =>{
         const registration = new AdminRegistration(req.body);
         try{
           await registration.save()
           res.redirect('agents')
+        }catch (err) {
+          res.send("Sorry! Something went wrong.");
+          console.log(err)
+       }
+    })
+
+// _____ posting a product to the db
+router.post('/add_product', async (req, res) =>{
+        const add_pdt = new Product(req.body);
+        try{
+          await add_pdt.save()
+          res.redirect('products')
         }catch (err) {
           res.send("Sorry! Something went wrong.");
           console.log(err)
@@ -37,6 +61,20 @@ router.post('/register', async (req, res) =>{
     })
  })
 
+//  __________ retriving products from the db
+router.get('/products', (req, res)=>{
+  Product.find({}, (err, products)=>{
+      if(err){
+          console.log(err)
+      }else{
+          
+          res.render('admins/products',{
+              products:products
+          })
+      }
+  })
+})
+
 //_______________ delete data 
 router.post("/delete", async (req, res) => {
   
@@ -47,17 +85,67 @@ router.post("/delete", async (req, res) => {
      res.status(400).send("unable to delete to database");
   }
 })
-//_______________ update data
-// router.post('/update', async (req, res) =>{
-//   const registration = new AdminRegistration(req.body);
-//   try{
-//     await registration.update()
-//     res.redirect('agents')
-//   }catch (err) {
-//     res.send("Sorry! Something went wrong.");
-//     console.log(err)
-//  }
+
+// ___________ delete product
+router.post("/del_pdt", async (req, res) => {
+  
+  try {
+    await Product.deleteOne({_id: req.body.id })
+    res.redirect('back')
+  } catch (error) {
+     res.status(400).send("unable to delete to database");
+  }
+})
+
+// ________ remeber to move this route to the bottom
+// router.get('/products', (req,res)=>{
+//   res.render('admins/products')
 // })
+
+//__________ view single agent
+router.get('/agent/:id', (req,res)=>{
+  AdminRegistration.findById(req.params.id, (errror, agent) =>{
+    res.render('admins/view_agent',{
+      
+      agent:agent
+    })
+  })
+})
+
+//__________ Goes to edit single agent page
+router.get('/edit/:id', (req,res)=>{
+  AdminRegistration.findById(req.params.id, (errror, agent) =>{
+    res.render('admins/edit_agent',{
+      agent:agent
+    })
+  })
+})
+
+//__________ update the agent
+// ! ill be back
+router.post('/agent/:id', async (req, res) =>{
+  let agent = req.body
+  
+  let query ={_id:req.params.id}
+  try{
+    await AdminRegistration.update()
+    res.redirect('edit')
+  }catch (err) {
+    res.send("Sorry! Something went wrong.");
+    console.log(err)
+ }
+    // AdminRegistration.update(query, agent, (err)=>{
+    //   if(err){
+    //     console.log(err)
+    //     return;
+    //   }else{
+    //     res.render('/',{
+    //       agents:agent
+    //     })
+    //   }
+    // })
+})
+
 
 //  router.post('/register', async (req, res) =>{
 // //     // console.log(req.body);

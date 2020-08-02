@@ -1,0 +1,9 @@
+extends layout
+block content
+    h1= agent.id
+    h1= agent.firstname
+
+    hr
+    br
+    a(href="/dash/edit/"+agent._id)
+        button.btn Edit

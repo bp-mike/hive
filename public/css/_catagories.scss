@@ -1,0 +1,12 @@
+.products{
+    .narrow{
+        .card-deck{
+            display: flex;
+            flex-wrap: wrap;
+            .card{
+                min-width: 10rem;
+                max-width: 10rem;
+            }
+        }
+    }
+}

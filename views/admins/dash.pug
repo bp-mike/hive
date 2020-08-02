@@ -24,13 +24,13 @@ html(lang='en')
                 a.admin-name(href='#') Bp mike
               ul.sidebar-link
                 li
-                  a.active(href='/views/layouts/admins/dash.html')
+                  a.active(href='/dash/')
                     i.fa.fa-home(aria-hidden='true')
                     | Dashboard
                 li
-                  a(href='#')
+                  a(href='/dash/products')
                     i.fa.fa-sticky-note-o(aria-hidden='true')
-                    | item
+                    | Products
                 li
                   a(href='#')
                     i.fa.fa-bookmark-o(aria-hidden='true')
@@ -40,11 +40,11 @@ html(lang='en')
                     i.fa.fa-calendar-check-o(aria-hidden='true')
                     | calender
                 li
-                  a(href='/views/layouts/admins/users_Agents.html')
+                  a(href='/dash/agents')
                     i.fa.fa-users(aria-hidden='true')
                     | Users
                 li
-                  a(href='/views/layouts/admins/tables.html')
+                  a(href='#')
                     i.fa.fa-table(aria-hidden='true')
                     | Tables
                 li
@@ -228,3 +228,4 @@ html(lang='en')
                       script(src='/public/bootstrap/js/popper.min.js')
                       script(src='/public/bootstrap/js/bootstrap.min.js')
                       script(src='/public/js/main.js')
+                      script(src='/public/js/validation.js')

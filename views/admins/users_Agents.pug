@@ -25,13 +25,13 @@ html(lang='en')
                 a.admin-name(href='#') Bp mike
               ul.sidebar-link
                 li
-                  a(href='/views/layouts/admins/dash.html')
+                  a(href='/dash/')
                     i.fa.fa-home(aria-hidden='true')
                     | Dashboard
                 li
-                  a(href='#')
+                  a(href='/dash/products')
                     i.fa.fa-sticky-note-o(aria-hidden='true')
-                    | item
+                    | Products
                 li
                   a(href='#')
                     i.fa.fa-bookmark-o(aria-hidden='true')
@@ -41,11 +41,11 @@ html(lang='en')
                     i.fa.fa-calendar-check-o(aria-hidden='true')
                     | calender
                 li
-                  a.active(href='/views/layouts/admins/users_Agents.html')
+                  a.active(href='/dash/agents')
                     i.fa.fa-users(aria-hidden='true')
                     | Users
                 li
-                  a(href='/views/layouts/admins/tables.html')
+                  a(href='#')
                     i.fa.fa-table(aria-hidden='true')
                     | Tables
                 li
@@ -97,12 +97,10 @@ html(lang='en')
                       .col-12
                         .table-header
                           h3 Staff
-                          h5 #{me}
-                                                    
                           button.btn(data-toggle='modal', data-target='#addAgent')
                             i.fa.fa-user-plus(aria-hidden='true')
                             |  Add Agent
-                        table.table.table1
+                        table.table.table1.table-striped
                           thead
                             tr
                               th #                              
@@ -113,6 +111,7 @@ html(lang='en')
                               th city
                               th
                           tbody
+                            
                             each agent, index in agents
                                 tr(data-toggle='modal', data-target='#details') 
                                     th=index+1
@@ -121,7 +120,10 @@ html(lang='en')
                                     td #{agent.gender}
                                     td #{agent.email}
                                     td #{agent.city}
-                                    td                                
+                                    td 
+                                      a(href="/dash/agent/"+agent._id)
+                                        button.btn details  
+                                    td                                 
                                         form(method="post" action='/dash/delete')
                                             input(type="hidden", placeholder="", name="id", value=agent._id)
                                             button.btn.btn-block(type="submit") Delete
@@ -131,38 +133,38 @@ html(lang='en')
                           .modal-dialog
                             .modal-content
                               .heading Add Sales Agent
-                              form(method='POST', action='/dash/register')
+                              form(method='POST' name='add_agent' action='/dash/register')
                                 // --------------names-------------------
                                 .form-row
                                   .form-group.col-md-6
                                     label(for='firstname') First Name
-                                    input#firstname.form-control(name='firstname', type='text')
+                                    input#firstname.form-control(name='firstname', type='text' required='first name is required')
                                   .form-group.col-md-6
                                     label(for='lastname') Last Name
-                                    input#lastname.form-control(name='lastname', type='text')
+                                    input#lastname.form-control(name='lastname', type='text' required='last name is required')
                                 .form-group
                                   label(for='username') User Name
-                                  input#username.form-control(name='username', type='text', placeholder='User Name', required='')
-                                .form-row
-                                  .col.form-group
-                                    label.form-check.form-check-inline(for='gender')
-                                    input.form-check-input(name='gender', value='male', type='radio')
-                                    span.form-check-label Male
-                                    label.form-check.form-check-inline(for='gender')
-                                    input.form-check-input(name='gender', value='female', type='radio')
-                                    span.form-check-label Female
+                                  input#username.form-control(name='username', type='text', placeholder='User Name', required='user namne is required')
+                                div.form-row
+                                  div.col.form-group
+                                      label.form-check.form-check-inline
+                                          input.form-check-input(type="radio" name="gender" value="female")
+                                          span.form-check-label Female 
+                                      label.form-check.form-check-inline
+                                          input.form-check-input(type="radio" name="gender" value="male")
+                                          span.form-check-label Male
                                 // -------------end of names------------
                                 // ----------NIN----------
                                 .form-row
                                   .form-group.col-md-6
                                     label(for='email') Email
-                                    input#inputEmail4.form-control(name='email', type='email')
+                                    input#inputEmail4.form-control(name='email', type='email' required='your emails address is required')
                                   .form-group.col-md-6
                                     label(for='password') Password
-                                    input#password.form-control(name='password', type='password')
+                                    input#password.form-control(name='password', type='password' required='please insert your password')
                                 .form-group
                                   label(for='nin') National ID Number (NIN)
-                                  input#username.form-control(name='nin', type='text', required='')
+                                  input#username.form-control(name='nin', type='text', required='NIN/National ID number is required')
                                 // -------NIN---------
                                 .form-group
                                   label(for='address') Address
@@ -176,8 +178,9 @@ html(lang='en')
                                     option(value='kyadondo') kyadondo
                                     option(value='wakiso') wakiso
                                 button.btn(type='button', data-dismiss='modal') cancel
-                                button.btn(type='submit' value='submit') Add
+                                button.btn(type='submit' value='submit' onClick="validate()") Add
                         // -------end of Agent modal----------
+
                         // ------------- details modal -----------
                         .col-12
                           #details.modal.add_agent_model
@@ -220,7 +223,7 @@ html(lang='en')
                                         td #{agent.city}
                                       tr
                                         td
-                                          button.btn close
+                                          button.btn(type="button" data-dismiss="modal") close
                                         td
                                           button.btn Edit
                         // ----------- end of details modal---------
@@ -234,3 +237,4 @@ html(lang='en')
                         script(src='/public/bootstrap/js/popper.min.js')
                         script(src='/public/bootstrap/js/bootstrap.min.js')
                         script(src='/public/js/main.js')
+                        script(src='/public/js/validation.js')
