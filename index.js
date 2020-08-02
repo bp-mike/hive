@@ -1,6 +1,7 @@
 //_______________dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
+const multer = require('multer');
 // ______________ requiring routes
 const layouts = require('./routes/layouts');
 const admin_routes = require('./routes/admin_routes');
