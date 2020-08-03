@@ -1,10 +1,34 @@
 const express =  require('express');
-
 const router = express.Router();
+const multer = require('multer');
 
+const storage =multer.diskStorage({
+  destination: function(req, file ,cb){
+    cb(null, './uploads');
+  },
+  filename: function(req, file, cb){
+    cb(null, file.originalname)
+  }
+})
+const filter = (req, file, cb)=>{
+  if(file.mimetype ==='image/jpeg' || file.mimetype === 'image/png'){
+    cb(null,true)
+  }else{
+    cb(null, false)
+  }
+}
+const upload = multer({
+  storage:storage,
+  limits:{
+    fileSize: 1024 * 1024 *10
+  },
+  fileFilter : filter
+});
 //_________ bringing in the models
 const AdminRegistration = require('../models/agent_registration');
 const Product =  require('../models/add_products');
+
+// __________ init multer
 
 router.get('/', (req, res)=>{
     res.render('admins/dash')
@@ -22,19 +46,40 @@ router.get('/pdts_layout', (req,res)=>{
 // _______ products page
 
 //_________ posting agent to the db
-router.post('/register', async (req, res) =>{
-        const registration = new AdminRegistration(req.body);
-        try{
-          await registration.save()
+// router.post('/register', async (req, res) =>{
+//         const registration = new AdminRegistration(req.body);
+//         try{
+//           await registration.save()
+//           res.redirect('agents')
+//         }catch (err) {
+//           res.send("Sorry! Something went wrong.");
+//           console.log(err)
+//        }
+//     })
+
+//_________ posting agent to the db
+    router.post("/register", async (req, res) => {
+      try {
+        const agents = new AdminRegistration(req.body);
+        await AdminRegistration.register(agents, req.body.password, (err) => {
+          if (err) { throw err }
           res.redirect('agents')
-        }catch (err) {
-          res.send("Sorry! Something went wrong.");
-          console.log(err)
-       }
+        })
+      } catch (err) {
+         res.status(400).send('Sorry! Something went wrong.')
+         console.log(err)
+      }
     })
+    
 
 // _____ posting a product to the db
-router.post('/add_product', async (req, res) =>{
+// _____ add other categories
+// ______ posting furniture
+// _______ posting toys
+// ________ posting fitness
+// ________- posting electronics
+// _______ others
+router.post('/add_product', upload.single('image'), async (req, res) =>{
         const add_pdt = new Product(req.body);
         try{
           await add_pdt.save()

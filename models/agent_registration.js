@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
+
 
 /*__________admin registration schema_____________*/ 
 const adminRegistrationSchema = new mongoose.Schema({
@@ -15,7 +17,7 @@ const adminRegistrationSchema = new mongoose.Schema({
     },
     username:{
       type: String,
-      unique:false,
+      unique:true,
       required:'please enter your first name',
       trim:true
     },
@@ -44,4 +46,5 @@ const adminRegistrationSchema = new mongoose.Schema({
 
 /*______________ end of login schema_________*/ 
 
-module.exports = mongoose.model('adminRegistration', adminRegistrationSchema)
+adminRegistrationSchema.plugin(passportLocalMongoose);
+module.exports = mongoose.model('adminRegistration', adminRegistrationSchema);

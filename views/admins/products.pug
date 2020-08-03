@@ -147,6 +147,9 @@ html(lang='en')
                               .heading Add Sales Agent
                               form(method='POST' name='add_product' action='/dash/add_product')
                                 // --------------  -------------------
+                                .form-group
+                                  label(for='image') image
+                                  input#image.form-control(name='image', type='file')
                                 .form-row
                                   .form-group.col-md-6
                                     label(for='productname') product
@@ -157,7 +160,7 @@ html(lang='en')
                                 .form-row
                                   .form-group.col-md-6
                                     label(for='date') Date of entry
-                                    input#date.form-control(name='date', type='datetime-local' required)
+                                    input#date.form-control(name='date', type='date' required)
                                   .form-group.col-md-6
                                     label(for='serial_no') Serial Number
                                     input#serial_no.form-control(name='serial_no', type='text' required)                                    

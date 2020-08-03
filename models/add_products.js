@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 /*__________admin registration schema_____________*/ 
 const AddProductSchema = new mongoose.Schema({
   
-  // Image:Image,                              
+  image:String,                              
   product:{
     type:String,
     required:'please enter product name',

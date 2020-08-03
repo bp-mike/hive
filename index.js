@@ -1,7 +1,7 @@
 //_______________dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
-const multer = require('multer');
+// const multer = require('multer');
 // ______________ requiring routes
 const layouts = require('./routes/layouts');
 const admin_routes = require('./routes/admin_routes');
@@ -11,6 +11,7 @@ const login_routes = require('./routes/login_routes')
 const mongoose = require('mongoose');
 require('dotenv').config();
 const AdminRegistration = require('./models/agent_registration');
+
 const expressvalidator = require('express-validator');
 const flash = require('connect-flash');
 
@@ -26,6 +27,7 @@ const path = require('path');
 //_____________init app
 const app = express();
 
+
 // __________ configurations
 // __________ view html files
 var view = "./views/"
@@ -35,7 +37,11 @@ app.set('views', './views');
 
 /*___________db___________*/
 
-mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopology: true},() =>{
+mongoose.connect(process.env.DATABASE, {
+   useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  },() =>{
   // console.log('finally ive connected u db')
 });
 mongoose.connection
@@ -50,6 +56,7 @@ mongoose.connection
 //_______________middlreware
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(expressSession);
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(require('connect-flash')());
@@ -87,9 +94,10 @@ app.use(express.static(path.join(__dirname, "")));
   app.use('/login', login_routes);
 
 //____ passport strategies
-// passport.use(AdminRegistration.createStrategy());
-// passport.serializeUser(AdminRegistration.serializeUser());
-// passport.deserializeUser(AdminRegistration.deserializeUser());
+passport.use(AdminRegistration.createStrategy());
+passport.serializeUser(AdminRegistration.serializeUser());
+passport.deserializeUser(AdminRegistration.deserializeUser());
+
 
 //______________error page.
 app.get('*',(req,res) =>{
