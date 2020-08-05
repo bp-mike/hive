@@ -8,19 +8,25 @@ html(lang='en')
     script(async='', defer='', src='https://buttons.github.io/buttons.js')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN', crossorigin='anonymous')
     link(rel='stylesheet', href='/public/css/splash.css')
-    title Manager login
+    title Admin
   body
-    .card.border-success.mb-3.jumbotron(style='max-width: 30rem;')
-      .card-header Sign in
-      form
-        .form-group
-          label(for='username') username
-          input#username.form-control(type='text', placeholder='username')
-        .form-group
-          label(for='Password') Password
-          input#Password1.form-control(type='password', placeholder='password')
-        a.btn(href='/dash/dashboard') Login
-        a.btn(href='/dash') Back
+    .list-group
+      i.fa.fa-user-circle(aria-hidden='true')
+      section
+        a.list-group-item.list-group-item-action.active(href='/login/')
+          table
+            tbody
+              tr
+                td
+                  i.fa.fa-user-o(aria-hidden='true')
+                td Manager/Admin
+        a.list-group-item.list-group-item-action(href='/login/sales_agent/')
+          table
+            tbody
+              tr
+                td
+                  i.fa.fa-user-o(aria-hidden='true')
+                td Sales Agent
     script(src='/public/bootstrap/js/jquery-3.5.1.min.js')
     script(src='/public/bootstrap/js/popper.min.js')
     script(src='/public/bootstrap/js/bootstrap.min.js')

@@ -2,6 +2,7 @@ const express =  require('express');
 const router = express.Router();
 const multer = require('multer');
 
+//__________ multer config 
 const storage =multer.diskStorage({
   destination: function(req, file ,cb){
     cb(null, './uploads');
@@ -24,6 +25,8 @@ const upload = multer({
   },
   fileFilter : filter
 });
+// ___________ end of multer config
+
 //_________ bringing in the models
 const AdminRegistration = require('../models/agent_registration');
 const Product =  require('../models/add_products');
@@ -31,8 +34,12 @@ const Product =  require('../models/add_products');
 // __________ init multer
 
 router.get('/', (req, res)=>{
-    res.render('admins/dash')
+    res.render('admins/splash')
   })
+
+router.get('/dashboard', (req, res)=>{
+  res.render('admins/dash')
+})
 
 
 router.get('/layout', (req,res)=>{
@@ -42,20 +49,6 @@ router.get('/layout', (req,res)=>{
 router.get('/pdts_layout', (req,res)=>{
   res.render('admins/pdts_layout')
 })
-
-// _______ products page
-
-//_________ posting agent to the db
-// router.post('/register', async (req, res) =>{
-//         const registration = new AdminRegistration(req.body);
-//         try{
-//           await registration.save()
-//           res.redirect('agents')
-//         }catch (err) {
-//           res.send("Sorry! Something went wrong.");
-//           console.log(err)
-//        }
-//     })
 
 //_________ posting agent to the db
     router.post("/register", async (req, res) => {
@@ -166,67 +159,16 @@ router.get('/edit/:id', (req,res)=>{
   })
 })
 
-//__________ update the agent
-// ! ill be back
-router.post('/agent/:id', async (req, res) =>{
-  let agent = req.body
-  
+//__________ update the agent(update action)
+router.post('/agent/:id', async (req, res) =>{  
   let query ={_id:req.params.id}
   try{
-    await AdminRegistration.update()
-    res.redirect('edit')
+    await AdminRegistration.update(query, req.body)
+    res.redirect('back')
   }catch (err) {
     res.send("Sorry! Something went wrong.");
     console.log(err)
  }
-    // AdminRegistration.update(query, agent, (err)=>{
-    //   if(err){
-    //     console.log(err)
-    //     return;
-    //   }else{
-    //     res.render('/',{
-    //       agents:agent
-    //     })
-    //   }
-    // })
 })
-
-
-//  router.post('/register', async (req, res) =>{
-// //     // console.log(req.body);
-//     const registration = new adminRegistration(req.body);
-//     try{
-//       await registration.save()
-//       res.send('Thank you for your registration!')
-//     }catch (err) {
-//       res.send("Sorry! Something went wrong.");
-//       console.log(err)
-//    }
-// })
-
-// router.post('/register',  (req, res) =>{
-//         const registration = new adminRegistration(req.body);
-//         registration.save((err)=>{
-//             if(err){
-//                 console.log(err);
-//                 return
-//             }else{
-//                 res.redirect(dash/agents)
-//             }
-//         })    
-//     })
-
-// router.get('/agents', async (req, res) => {
-//     try {
-//       let items = await Registration.find()
-//       // if (req.query.gender) {
-//       //   items = await Registration.find({ gender: req.query.gender })
-//       // }
-//       res.render('admins/dash')
-//     } catch (err) {
-//       res.status(400).send("unable to find items in the database");
-//     }
-// });
-  
 
 module.exports = router;

@@ -82,7 +82,7 @@ textarea:focus, input:focus{
 .navbar-dark{
     .dropdown-menu{
         display: none;
-        margin-top: .5rem;
+        margin-top: .4rem;
         border-top: none;
         border-radius: 0;
         background: rgba(0,0,0,0.6);
@@ -187,50 +187,52 @@ textarea:focus, input:focus{
     margin-bottom: 0;
     border-radius: 0;
 }
-.most-popular{
-    overflow: hidden;
-    padding: .2rem;
-    padding-left: 3.4rem;
-    .prev{
-        position: absolute;
-        font-size: 4rem;
-        margin-top: 5rem;
-        margin-left: 1rem;
-        // width: auto;
-        // border-radius: 50%;
-        // background: $greyDark;
-        padding: 1rem;
-        opacity: .4;
-        cursor: pointer;
-        &:hover{
-            opacity: 1;
-        }
-    }
+
+.slider{
+    position: relative;
     .next{
         position: absolute;
-        right: 0;
+        top: 60%;
+        right: .4rem;
         font-size: 4rem;
-        margin-top: 5rem;
-        margin-right: 9rem;
-        // width: auto;
-        // border-radius: 50%;
-        // background: $greyDark;
-        padding: 1rem;
-        opacity: .4;
-        cursor: pointer;
-        &:hover{
-            opacity: 1;
+        cursor: pointer;        
+    }
+
+    .prev{
+        position: absolute;
+        top: 60%;
+        left: .4rem;
+        font-size: 4rem;
+        cursor: pointer;        
+    }
+
+    
+    .pdt-wrapper{
+        border: 1px;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        overflow: hidden;
+        .pdt{
+            display: inline-block;
+            height: auto;
+            margin: 0 10px;
+            .card{
+                &:focus{
+                    outline: none;
+                }                
+                .card-body{
+                    color: $purpleDark;
+                }
+                &:hover{
+                    .card-title{
+                        color: $greenNeon;
+                    }
+                }
+            }
         }
     }
 }
-.product{
-    display: flex;
-    margin: .5rem;
-    background: #fff;
-    width: 15rem;
-    height: 15rem;
-}
-
 
 
 /*_____________end of popular pdct section_____________________*/ 
@@ -301,21 +303,17 @@ font-size: 1rem;
     }
 }
 
-.most-popular{
-    .prev{
-        font-size: 3rem;
-        opacity:1;
-        left: 0;
-        margin-left: 0;
-    }
+.slider{
     .next{
-        font-size: 3rem;
-        opacity:1;
         right: 0;
-        margin-right: 0;
+        font-size: 2rem;       
+    }
+
+    .prev{
+        left: 0;
+        font-size: 2rem;       
     }
 }
-
 
 }
 

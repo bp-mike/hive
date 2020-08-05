@@ -1,9 +1,43 @@
 extends layout
 block content
-    h1= agent.id
-    h1= agent.firstname
-
-    hr
-    br
-    a(href="/dash/edit/"+agent._id)
-        button.btn Edit
+    h1 #{agent.firstname}
+    hr    
+    table.table2
+        tbody
+            tr
+                th ID
+                td #{agent._id}
+            tr
+                th First Name
+                td #{agent.firstname}
+            tr
+                th Last name
+                td #{agent.lastname}
+            tr
+                th User Name
+                td #{agent.username}
+            tr
+                th NIN
+                td #{agent.nin}
+            tr
+                th Gender
+                td #{agent.gender}
+            tr
+                th Email
+                td #{agent.email}
+            tr
+                th password
+                td #{agent.password}
+            tr
+                th Address
+                td #{agent.address}
+            tr
+                th city
+                td #{agent.city}
+            tr
+                td
+                    a(href='/dash/agents')
+                        button.btn(type="button") Back
+                td
+                    a(href="/dash/edit/"+agent._id)
+                        button.btn Edit

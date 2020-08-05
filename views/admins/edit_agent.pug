@@ -4,52 +4,53 @@ block content
     hr
     //- each agent in agents
     h2 #{agent.username}
+    hr
     div.edit_form
-        form(method='POST', action='/dash/agent'+agent._id)
-                                // --------------names-------------------
-                                .form-row
-                                  .form-group.col-md-6
-                                    label(for='firstname') First Name
-                                    input#firstname.form-control(name='firstname', type='text' value=agent.firstname)
-                                  .form-group.col-md-6
-                                    label(for='lastname') Last Name
-                                    input#lastname.form-control(name='lastname', type='text' value=agent.lastname)
-                                .form-group
-                                  label(for='username') User Name
-                                  input#username.form-control(name='username', type='text', placeholder='User Name', required value=agent.username)
-                                
-                                //- .form-row
-                                  .col.form-group
-                                    label.form-check.form-check-inline(for='gender')
-                                    input.form-check-input(name='gender', value=agent.gender, type='radio')
-                                    span.form-check-label Male
-                                    label.form-check.form-check-inline(for='gender')
-                                    input.form-check-input(name='gender', value=agent.gender, type='radio')
-                                    span.form-check-label Female
-                                // -------------end of names------------
-                                // ----------NIN----------
-                                .form-row
-                                  .form-group.col-md-6
-                                    label(for='email') Email
-                                    input#inputEmail4.form-control(name='email', type='email' value=agent.email)
-                                  .form-group.col-md-6
-                                    label(for='password') Password
-                                    input#password.form-control(name='password', type='password' value=agent.password)
-                                .form-group
-                                  label(for='nin') National ID Number (NIN)
-                                  input#username.form-control(name='nin', type='text', required='' value=agent.nin)
-                                // -------NIN---------
-                                .form-group
-                                  label(for='address') Address
-                                  input#inputAddress.form-control(name='address', type='text' value=agent.address)
-                                .form-group
-                                  label(for='city') City
-                                  select#city.form-control.custom-select(name='city' )
-                                    option(selected='') #{agent.city}
-                                    option(value='kampala') kampala
-                                    option(value='enttebbe') Enttebe
-                                    option(value='kyadondo') kyadondo
-                                    option(value='wakiso') wakiso
-                                a(href='/dash/agents')
-                                    button.btn(type='button') Back
-                                button.btn(type='submit' value='submit') Edit
+        form(method='POST', action='/dash/agent/'+agent._id)
+          // --------------names-------------------
+          .form-row
+            .form-group.col-md-6
+              label(for='firstname') First Name
+              input#firstname.form-control(name='firstname', type='text' value=agent.firstname)
+            .form-group.col-md-6
+              label(for='lastname') Last Name
+              input#lastname.form-control(name='lastname', type='text' value=agent.lastname)
+          .form-group
+            label(for='username') User Name
+            input#username.form-control(name='username', type='text', placeholder='User Name', required value=agent.username)
+          
+          //- .form-row
+            .col.form-group
+              label.form-check.form-check-inline(for='gender')
+              input.form-check-input(name='gender', value=agent.gender, type='radio')
+              span.form-check-label Male
+              label.form-check.form-check-inline(for='gender')
+              input.form-check-input(name='gender', value=agent.gender, type='radio')
+              span.form-check-label Female
+          // -------------end of names------------
+          // ----------NIN----------
+          .form-row
+            .form-group.col-md-6
+              label(for='email') Email
+              input#inputEmail4.form-control(name='email', type='email' value=agent.email)
+            .form-group.col-md-6
+              label(for='password') Password
+              input#password.form-control(name='password', type='password' value=agent.password)
+          .form-group
+            label(for='nin') National ID Number (NIN)
+            input#username.form-control(name='nin', type='text', required='' value=agent.nin)
+          // -------NIN---------
+          .form-group
+            label(for='address') Address
+            input#inputAddress.form-control(name='address', type='text' value=agent.address)
+          .form-group
+            label(for='city') City
+            select#city.form-control.custom-select(name='city' )
+              option(selected='') #{agent.city}
+              option(value='kampala') kampala
+              option(value='enttebbe') Enttebe
+              option(value='kyadondo') kyadondo
+              option(value='wakiso') wakiso
+          a(href='/dash/agents')
+              button.btn(type='button') Back
+          button.btn(type='submit' value='submit') Edit

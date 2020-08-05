@@ -7,7 +7,6 @@ body{
     // overflow: scroll;
 }
 
-
 textarea:focus, input:focus{
   outline: none;
   background: $greyDark;
@@ -428,10 +427,7 @@ footer{
   border-top: 1px groove $greenNeon;
 } 
 
-
-
-
-
+// ____________________________ break points ___________________
   @media (max-width: 768px) {
 body{
   margin: 0;

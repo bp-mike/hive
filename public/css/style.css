@@ -121,7 +121,7 @@ textarea:focus, input:focus {
 
 .navbar-dark .dropdown-menu {
   display: none;
-  margin-top: .5rem;
+  margin-top: .4rem;
   border-top: none;
   border-radius: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -232,49 +232,50 @@ textarea:focus, input:focus {
   border-radius: 0;
 }
 
-.most-popular {
+.slider {
+  position: relative;
+}
+
+.slider .next {
+  position: absolute;
+  top: 60%;
+  right: .4rem;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.slider .prev {
+  position: absolute;
+  top: 60%;
+  left: .4rem;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.slider .pdt-wrapper {
+  border: 1px;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
   overflow: hidden;
-  padding: .2rem;
-  padding-left: 3.4rem;
 }
 
-.most-popular .prev {
-  position: absolute;
-  font-size: 4rem;
-  margin-top: 5rem;
-  margin-left: 1rem;
-  padding: 1rem;
-  opacity: .4;
-  cursor: pointer;
+.slider .pdt-wrapper .pdt {
+  display: inline-block;
+  height: auto;
+  margin: 0 10px;
 }
 
-.most-popular .prev:hover {
-  opacity: 1;
+.slider .pdt-wrapper .pdt .card:focus {
+  outline: none;
 }
 
-.most-popular .next {
-  position: absolute;
-  right: 0;
-  font-size: 4rem;
-  margin-top: 5rem;
-  margin-right: 9rem;
-  padding: 1rem;
-  opacity: .4;
-  cursor: pointer;
+.slider .pdt-wrapper .pdt .card .card-body {
+  color: #282639;
 }
 
-.most-popular .next:hover {
-  opacity: 1;
-}
-
-.product {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: .5rem;
-  background: #fff;
-  width: 15rem;
-  height: 15rem;
+.slider .pdt-wrapper .pdt .card:hover .card-title {
+  color: #92CF48;
 }
 
 /*_____________end of popular pdct section_____________________*/
@@ -348,17 +349,13 @@ footer hr {
   input::placeholder {
     font-size: 1rem;
   }
-  .most-popular .prev {
-    font-size: 3rem;
-    opacity: 1;
-    left: 0;
-    margin-left: 0;
-  }
-  .most-popular .next {
-    font-size: 3rem;
-    opacity: 1;
+  .slider .next {
     right: 0;
-    margin-right: 0;
+    font-size: 2rem;
+  }
+  .slider .prev {
+    left: 0;
+    font-size: 2rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
