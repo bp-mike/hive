@@ -1,0 +1,192 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/public/bootstrap/css/bootstrap.min.css')
+  link(rel='title icon' href='images.png' alt='title')
+  script(async='' defer='' src='https://buttons.github.io/buttons.js')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous')
+  link(rel='stylesheet' href='/public/css/style.css')
+  link(rel='stylesheet' href='/public/css/fixed.css')
+  title Covid-Stores
+// Home section
+div
+  // nav
+  nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+    a.navbar-brand(href='/views/users/index.html')
+      h1 Covid-Stores
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      form.search-area(action='')
+        input(type='text' name='' value='' placeholder='Type here to search')
+        button.fa.fa-search(type='button')
+      ul.navbar-nav.ml-auto
+        li.nav-item.active
+          a.nav-link.active(href='/views/users/index.html') Home
+        // drop down
+        li.nav-item.dropdown
+          a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+            | categories
+          .dropdown-menu.nav-link.text-center(aria-labelledby='navbarDropdownMenuLink')
+            a.dropdown-item.nav-link(href='#') fitness
+            a.dropdown-item.nav-link(href='#') Electronics
+            a.dropdown-item.nav-link(href='/views/users/furniture.html') Furniutre
+            a.dropdown-item.nav-link(href='#') Toys
+            // --- put table drop down ---------
+        // end drop down
+        li.nav-item
+          a.nav-link(href='#')
+            i.fa.fa-shopping-cart(style='font-size: 1.2rem; padding-top: 0;')
+        // <li class="nav-item"><a href="#resources" class="nav-link">Resources</a></li>
+        //
+          <li class="nav-item"><a href="#clients" class="nav-link">Clients</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+  // end of nav
+  // landing page section
+  .landing
+    .home-wrap
+      .home-inner
+  .caption.text-center
+    h1 welcome to Covid-Stores
+    h3 our prices are unbelivable
+    // <a href="" class="btn btn-outline-light btn-lg" href="#course">Get started</a>
+  // end of landing section
+// end Home section
+// -------------categories section--------------
+.offset
+  .col-12.narrow.text-center
+    h1.heading categories
+    .card-deck
+      .card
+        a(href='/views/users/furniture.html')
+          img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+          .card-body
+            h5.card-title Furniutre
+      .card
+        a(href='/views/users/furniture.html')
+          img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+          .card-body
+            h5.card-title Furniutre
+      .card
+        a(href='/views/users/furniture.html')
+          img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+          .card-body
+            h5.card-title Furniutre
+      .card
+        a(href='/views/users/furniture.html')
+          img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+          .card-body
+            h5.card-title Furniutre
+// ---------- end categories section ----------
+// ------------------ the most popular section ------------
+.jumbotron.offset
+  .page-wrapper
+    .slider.text-center
+      .col-12
+        // ------ heading ----------
+        h3.heading most popular products
+        .heading-underline
+      // -------- arrows ------
+      i.fa.fa-chevron-left.prev
+      i.fa.fa-chevron-right.next
+      // ----- slider wrapper ----------
+      .pdt-wrapper
+        // --------- slides -----------
+        .pdt
+          .card
+            a(href='#')
+              img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+              .card-body
+                h5.card-title Furniutre
+        .pdt
+          .card
+            a(href='#')
+              img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+              .card-body
+                h5.card-title Furniutre
+                table
+                  tr
+                    th price:
+                    td 2000
+                    td  |
+                    th Initial pay:
+                    td 2000
+                  tr
+                    th price:
+                    td 2000
+                    td  |
+                    th Initial pay:
+                    td 2000
+        .pdt
+          .card
+            a(href='#')
+              img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+              .card-body
+                h5.card-title Furniutre
+        .pdt
+          .card
+            a(href='#')
+              img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+              .card-body
+                h5.card-title Furniutre
+        .pdt
+          .card
+            a(href='#')
+              img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+              .card-body
+                h5.card-title Furniutre
+        .pdt
+          .card
+            a(href='#')
+              img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+              .card-body
+                h5.card-title Furniutre
+        .pdt
+          .card
+            a(href='#')
+              img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+              .card-body
+                h5.card-title Furniutre
+        .pdt
+          .card
+            a(href='#')
+              img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+              .card-body
+                h5.card-title Furniutre
+        .pdt
+          .card
+            a(href='#')
+              img.card-img-top(src='/public/img/product-1-2.jpg' width='50' alt='category')
+              .card-body
+                h5.card-title Furniutre
+        // ------- end of slides ---------
+      // ------------- end of slider wrapper ----
+// ------------------ end of the most popular section ------------
+// footer section
+footer.offset
+  .row.justify-content-center
+    .col-md-5.text-center
+      h1 Covid-Stores
+      p Lorem ipsum dolor, amet deserunt omnis?
+      strong Contact info
+      p
+        | 0789101112 
+        br
+        |  me@email.com
+      a(href='www.facebook.com' target='_blank')
+        i.fa.fa-facebook-square(aria-hidden='true')
+      a(href='www.twitter.com' target='_blank')
+        i.fa.fa-twitter-square(aria-hidden='true')
+      a(href='www.instagram.com' target='_blank')
+        i.fa.fa-instagram(aria-hidden='true')
+    hr.socket
+    |       Covid-Stores &copy;bpmike | Designed by Otieno Mike
+// end footer section
+script(src='/public/bootstrap/js/jquery-3.5.1.min.js')
+script(src='/public/bootstrap/js/popper.min.js')
+script(src='/public/bootstrap/js/bootstrap.min.js')
+// ------- slick couresel script-------
+script(type='text/javascript' src='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js')
+// ----------- custom js ---------
+script(src='/public/js/main.js')

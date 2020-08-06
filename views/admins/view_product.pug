@@ -1,0 +1,42 @@
+extends pdts_layout
+block content
+    h1 #{product.product}
+    img(src='/img/'+ product.image alt="image" width="60" height="70" )
+    hr    
+    table.table2
+        tbody
+            tr
+                th Product ID
+                td #{product._id}
+            tr
+                th Category
+                td #{product.category}
+            tr
+                th Make
+                td #{product.make}
+            tr
+                th Serial Number
+                td #{product.serial_no}
+            tr
+                th Date of entry
+                td #{product.date}
+            tr
+                th Price
+                td #{product.price}
+            tr
+                th Initial Pay
+                td #{product.initial_pay}
+            tr
+                th Pay Interval
+                td #{product.Pay_Interval}
+            tr
+                th Stock
+                td #{product.stock}
+          
+            tr
+                td
+                    a(href='/dash/products')
+                        button.btn(type="button") Back
+                td
+                    a(href="/dash/edit_pdt/"+product._id)
+                        button.btn Edit

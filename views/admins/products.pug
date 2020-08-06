@@ -121,11 +121,8 @@ html(lang='en')
                     each product, index in products
                         tr(data-toggle='modal', data-target='#details') 
                             th=index+1
-                            //- td #{product.image}
-                            //- td #{product.(img(src='/img/' + product.image))}
-                            //- img(src='/img/'+ product.image alt="image" )
                             td 
-                              img(src='/img/'+ product.image alt="image" width="30" height="30" )
+                              img(src='/img/'+ product.image alt="image" /*style="border-radius:50%;"*/ width="30" height="30" )
                             td #{product._id}                          
                             td #{product.product}
                             td #{product.category}
@@ -136,8 +133,8 @@ html(lang='en')
                             td #{product.initial_pay}
                             td #{product.Pay_Interval}
                             td #{product.stock}
-                            //- td 
-                              a(href="/dash/agents/"+agent._id)
+                            td 
+                              a(href="/dash/product/"+product._id)
                                 button.btn details  
                             td                                 
                                 form(method="post" action='/dash/del_pdt')
@@ -148,7 +145,7 @@ html(lang='en')
                 #addproduct.modal.add_agent_model
                   .modal-dialog
                     .modal-content
-                      .heading Add Sales Agent
+                      .heading Add product
                       form(method='POST' name='add_product' action='/dash/add_product')
                         // --------------  -------------------
                         .form-group

@@ -104,8 +104,7 @@ router.get('/products', (req, res)=>{
   Product.find({}, (err, products)=>{
       if(err){
           console.log(err)
-      }else{
-          
+      }else{          
           res.render('admins/products',{
               products:products
           })
@@ -150,6 +149,16 @@ router.get('/agent/:id', (req,res)=>{
   })
 })
 
+// ___________ view single product
+router.get('/product/:id', (req,res)=>{
+  Product.findById(req.params.id, (errror, product) =>{
+    res.render('admins/view_product',{
+      
+      product:product
+    })
+  })
+})
+
 //__________ Goes to edit single agent page
 router.get('/edit/:id', (req,res)=>{
   AdminRegistration.findById(req.params.id, (errror, agent) =>{
@@ -159,11 +168,31 @@ router.get('/edit/:id', (req,res)=>{
   })
 })
 
+// _____________ Goes to edit single product page
+router.get('/edit_pdt/:id', (req,res)=>{
+  Product.findById(req.params.id, (errror, product) =>{
+    res.render('admins/edit_pdt',{
+      product:product
+    })
+  })
+})
+
 //__________ update the agent(update action)
 router.post('/agent/:id', async (req, res) =>{  
   let query ={_id:req.params.id}
   try{
     await AdminRegistration.update(query, req.body)
+    res.redirect('back')
+  }catch (err) {
+    res.send("Sorry! Something went wrong.");
+    console.log(err)
+ }
+})
+// ___________ updte the product
+router.post('/product/:id', async (req, res) =>{  
+  let query ={_id:req.params.id}
+  try{
+    await Product.update(query, req.body)
     res.redirect('back')
   }catch (err) {
     res.send("Sorry! Something went wrong.");

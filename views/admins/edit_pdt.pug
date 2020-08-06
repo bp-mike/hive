@@ -1,0 +1,60 @@
+extends pdts_layout
+block content
+    h1 Edit  product
+    hr
+    //- each product in products
+    h2 #{product.product}
+    hr
+    div.edit_form
+        form(method='POST' /*name='add_product'*/ action='/dash/product/'+product._id)
+                        // --------------  -------------------
+                        //- .form-group
+                          label(for='image') image
+                          input#image.form-control(name='image', type='file')
+                        .form-row
+                          .form-group.col-md-6
+                            label(for='productname') product
+                            input#productname.form-control(name='product', type='text' value=product.product)
+                          .form-group.col-md-6
+                            label(for='make') make
+                            input#make.form-control(name='make', type='text' value=product.make)
+                        .form-row
+                          .form-group.col-md-6
+                            label(for='date') Date of entry
+                            input#date.form-control(name='date', type='date' value=product.category)
+                          .form-group.col-md-6
+                            label(for='serial_no') Serial Number
+                            input#serial_no.form-control(name='serial_no', type='text' value=product.serial_no)                                    
+                        .form-row
+                          .form-group.col-md-6
+                            label(for='price') Price
+                            input#price.form-control(name='price', type='number' value=product.price)
+                          .form-group.col-md-6
+                            label(for='initial_pay') initial Pay
+                            input#initial_pay.form-control(name='initial_pay', type='number' value=product.initial_pay)                                
+                        .form-group
+                          label(for='Pay_Interval') Pay Interval
+                          input#Pay_Interval.form-control(name='Pay_Interval', type='number' value=product.Pay_Interval)
+                        .form-group
+                          label(for='category') Category
+                          select#city.form-control.custom-select(name='category' value=product.category)
+                            option(selected='' value=product.category) #{product.category}
+                            option(value='furniture') furniture
+                            option(value='electronics') electronics
+                            option(value='sports') sports
+                            option(value='toys') toys
+                            option(value='fitness') fitness
+                            option(value='other') other
+                        .form-group
+                          label(for='stock') Stock
+                          select#city.form-control.custom-select(name='stock' type="number" value=product.stock)
+                            option(selected value=product.stock) #{product.stock}
+                            option(value=10) 10
+                            option(value=20) 20
+                            option(value=30) 30
+                            option(value=40) 40
+                            option(value=50) 50
+                            option(value="100+") 100+
+                        a(href='/dash/products')
+                          button.btn(type='button') Back
+                        button.btn(type='submit' value='submit' /*onClick="validate()"*/) Edit
