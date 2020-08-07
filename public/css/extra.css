@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+.error {
+  color: red;
+  font-size: .8rem;
+}
+
 .table-section {
   margin-top: 7rem;
 }

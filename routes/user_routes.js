@@ -8,13 +8,13 @@ router.get('/', (req, res)=>{
     res.render('users/index')
   })
 
-// ______________ displaying data on the ui
-router.get('/products', (req, res)=>{
+// ______________ displaying data on the ui-furniture 
+router.get('/furniture', (req, res)=>{
     Product.find({}, (err, products)=>{
         if(err){
             console.log(err)
         }else{          
-            res.render('users/products',{
+            res.render('users/furniture',{
                 products:products
             })
         }

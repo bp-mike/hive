@@ -154,27 +154,34 @@ html(lang='en')
                         .form-row
                           .form-group.col-md-6
                             label(for='productname') product
-                            input#productname.form-control(name='product', type='text' required)
+                            input#productname.form-control(name='product', type='text' )
+                            div(class="error" id="pdt_err")
                           .form-group.col-md-6
                             label(for='make') make
-                            input#make.form-control(name='make', type='text' required)
+                            input#make.form-control(name='make', type='text' )
+                            div(class="error" id="make_err")
                         .form-row
                           .form-group.col-md-6
                             label(for='date') Date of entry
-                            input#date.form-control(name='date', type='date' required)
+                            input#date.form-control(name='date', type='date' )
+                            div(class="error" id="date_err")
                           .form-group.col-md-6
                             label(for='serial_no') Serial Number
-                            input#serial_no.form-control(name='serial_no', type='text' required)                                    
+                            input#serial_no.form-control(name='serial_no', type='text' )    
+                            div(class="error" id="serial_err")                                
                         .form-row
                           .form-group.col-md-6
                             label(for='price') Price
-                            input#price.form-control(name='price', type='number' required)
+                            input#price.form-control(name='price', type='number' )
+                            div(class="error" id="px_err")
                           .form-group.col-md-6
                             label(for='initial_pay') initial Pay
-                            input#initial_pay.form-control(name='initial_pay', type='number' required)                                
+                            input#initial_pay.form-control(name='initial_pay', type='number' ) 
+                            div(class="error" id="initial_pay_err")                               
                         .form-group
                           label(for='Pay_Interval') Pay Interval
                           input#Pay_Interval.form-control(name='Pay_Interval', type='number')
+                          div(class="error" id="pay_interval_err")
                         .form-group
                           label(for='category') Category
                           select#city.form-control.custom-select(name='category')
@@ -185,6 +192,7 @@ html(lang='en')
                             option(value='toys') toys
                             option(value='fitness') fitness
                             option(value='other') other
+                          div(class="error" id="category_err")
                         .form-group
                           label(for='stock') Stock
                           select#city.form-control.custom-select(name='stock' type="number")
@@ -195,8 +203,9 @@ html(lang='en')
                             option(value=40) 40
                             option(value=50) 50
                             option(value="100+") 100+
+                          div(class="error" id="stock_err")
                         button.btn(type='button', data-dismiss='modal') cancel
-                        button.btn(type='submit' value='submit' /*onClick="validate()"*/) Add
+                        button.btn(type='submit' value='submit' onClick="validate_products_form()") Add
                 // -------end of product modal----------
 
                 // ------------- details modal -----------
@@ -255,4 +264,4 @@ html(lang='en')
     script(src='/public/bootstrap/js/popper.min.js')
     script(src='/public/bootstrap/js/bootstrap.min.js')
     script(src='/public/js/main.js')
-    script(src='/public/js/validation.js')
+    script(src='/public/js/validate.js')

@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+.error {
+  color: red;
+  font-size: .8rem;
+}
+
 body {
   background: #EAEDF3;
   font-family: 'Montserrat', sans-serif;

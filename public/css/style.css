@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+.error {
+  color: red;
+  font-size: .8rem;
+}
+
 .products .narrow .card-deck {
   display: -webkit-box;
   display: -ms-flexbox;

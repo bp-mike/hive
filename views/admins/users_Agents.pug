@@ -138,13 +138,16 @@ html(lang='en')
                         .form-row
                           .form-group.col-md-6
                             label(for='firstname') First Name
-                            input#firstname.form-control(name='firstname', type='text' required='first name is required')
+                            input#firstname.form-control(name='firstname', type='text' )
+                            div(class="error" id="f_name_err")
                           .form-group.col-md-6
                             label(for='lastname') Last Name
-                            input#lastname.form-control(name='lastname', type='text' required='last name is required')
+                            input#lastname.form-control(name='lastname', type='text' )
+                            div(class="error" id="l_name_err")
                         .form-group
                           label(for='username') User Name
-                          input#username.form-control(name='username', type='text', placeholder='User Name', required='user namne is required')
+                          input#username.form-control(name='username', type='text', placeholder='User Name')
+                          div(class="error" id="user_name_err")
                         div.form-row
                           div.col.form-group
                               label.form-check.form-check-inline
@@ -153,22 +156,27 @@ html(lang='en')
                               label.form-check.form-check-inline
                                   input.form-check-input(type="radio" name="gender" value="male")
                                   span.form-check-label Male
+                              div(class="error" id="gender_err")
                         // -------------end of names------------
                         // ----------NIN----------
                         .form-row
                           .form-group.col-md-6
                             label(for='email') Email
-                            input#inputEmail4.form-control(name='email', type='email' required='your emails address is required')
+                            input#inputEmail4.form-control(name='email', type='email')
+                            div(class="error" id="email_err")
                           .form-group.col-md-6
                             label(for='password') Password
-                            input#password.form-control(name='password', type='password' required='please insert your password')
+                            input#password.form-control(name='password', type='password' )
+                            div(class="error" id="pwd_err")
                         .form-group
                           label(for='nin') National ID Number (NIN)
-                          input#username.form-control(name='nin', type='text', required='NIN/National ID number is required')
+                          input#username.form-control(name='nin', type='text' )
+                          div(class="error" id="nin_err")
                         // -------NIN---------
                         .form-group
                           label(for='address') Address
                           input#inputAddress.form-control(name='address', type='text')
+                          div(class="error" id="address_err")
                         .form-group
                           label(for='city') City
                           select#city.form-control.custom-select(name='city')
@@ -177,8 +185,9 @@ html(lang='en')
                             option(value='enttebbe') Enttebe
                             option(value='kyadondo') kyadondo
                             option(value='wakiso') wakiso
+                          div(class="error" id="city_err")
                         button.btn(type='button', data-dismiss='modal') cancel
-                        button.btn(type='submit' value='submit' onClick="validate()") Add
+                        button.btn(type='submit' value='submit' onClick="validate_agent_form()") Add
                 // -------end of Agent modal----------
 
                 // ------------- details modal -----------
@@ -237,4 +246,4 @@ html(lang='en')
     script(src='/public/bootstrap/js/popper.min.js')
     script(src='/public/bootstrap/js/bootstrap.min.js')
     script(src='/public/js/main.js')
-    script(src='/public/js/validation.js')
+    script(src='/public/js/validate.js')

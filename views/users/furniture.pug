@@ -8,8 +8,7 @@
   <link rel="title icon" href="images.png" alt='title'>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="/public/css/style.css">
   <link rel="stylesheet" href="/public/css/fixed.css">
 
@@ -24,8 +23,7 @@
       <a href="#" class="navbar-brand">
         <h1>Covid-Stores</h1>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -37,12 +35,11 @@
         </form>
 
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="/views/layouts/users/index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
           <!-- drop down -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              categories
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> categories
+              
             </a>
             <div class="dropdown-menu nav-link" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item nav-link" href="#">fitness</a>
@@ -77,6 +74,27 @@
 
       <!---------products------------->
       <div class="card-deck">
+        each product, index in products
+          div.card
+            img(src='/img/'+ product.image alt="image" width="50" class="card-img-top" )
+            .card-body.text-left
+              .name name: #{product.product}
+              .brand Brand/make: #{product.make}
+              .price price: #{product.price}
+          //- tr              
+          //-     td 
+          //-       img(src='/img/'+ product.image alt="image" /*style="border-radius:50%;"*/ width="30" height="30" )
+          //-     td #{product._id}                          
+          //-     td #{product.product}
+          //-     td #{product.category}
+          //-     td #{product.make}
+          //-     td #{product.serial_no}
+          //-     td #{product.date}
+          //-     td #{product.price}
+          //-     td #{product.initial_pay}
+          //-     td #{product.Pay_Interval}
+          //-     td #{product.stock}
+              td
         <div class="card">
           <img src="/public/img/product-1-2.jpg" width="50" class="card-img-top" alt="...">
           <div class="card-body text-left">
@@ -164,7 +182,7 @@
           </div>
         </div>
 
-        <!---------- from admin side let products appear on this page #{product.product} --------->
+        <!---------- from admin side let products appear on this page {product.product} --------->
 
       </div>
 
@@ -189,7 +207,7 @@
         <a href="www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
       </div>
       <hr class="socket">
-      Covid-Stores &copy;bpmike | Designed by Otieno Mike
+      span Covid-Stores &copy;bpmike | Designed by Otieno Mike
     </div>
   </footer>
   <!-- end footer section -->
