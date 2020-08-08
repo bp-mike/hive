@@ -12,7 +12,7 @@ const AddProductSchema = new mongoose.Schema({
   category:String,
   make:String,
   serial_no:String,
-  date:Date,
+  date:String,
   price:String,
   initial_pay:String,
   Pay_Interval:String,

@@ -8,7 +8,7 @@ router.get('/', (req, res)=>{
     res.render('users/index')
   })
 
-// ______________ displaying data on the ui-furniture 
+// ______________ displaying data on the ui-furniture --
 router.get('/furniture', (req, res)=>{
     Product.find({}, (err, products)=>{
         if(err){
@@ -20,6 +20,46 @@ router.get('/furniture', (req, res)=>{
         }
     })
   })
+
+  // ____________ displaying data on the ui-fitness
+  router.get('/fitness', (req, res)=>{
+    Product.find({}, (err, products)=>{
+        if(err){
+            console.log(err)
+        }else{          
+            res.render('users/fitness',{
+                products:products
+            })
+        }
+    })
+  })
+
+  // ____________ displaying data on the ui-toys
+  router.get('/toys', (req, res)=>{
+    Product.find({}, (err, products)=>{
+        if(err){
+            console.log(err)
+        }else{          
+            res.render('users/toys',{
+                products:products
+            })
+        }
+    })
+  })
+
+    // ____________ displaying data on the ui-electronics
+router.get('/electronics', (req, res)=>{
+  Product.find({}, (err, products)=>{
+      if(err){
+          console.log(err)
+      }else{          
+          res.render('users/electronics',{
+              products:products
+          })
+      }
+  })
+})
+
 
   // ___________ view single product
 router.get('/product/:id', (req,res)=>{

@@ -12,7 +12,7 @@ html(lang='en')
   body
     .card.border-success.mb-3.jumbotron(style='max-width: 30rem;')
       .card-header Sign in
-      form
+      form(action="/login" method="POST" name="manager_login")
         .form-group
           label(for='username') username
           input#username.form-control(type='text', placeholder='username')

@@ -164,7 +164,26 @@ textarea:focus, input:focus {
 /*____________landing page__________*/
 .home-inner {
   margin-top: 4rem;
+}
+
+.index {
   background-image: url(/public/img/slider/five.jpg);
+}
+
+.furniture {
+  background-image: url(/public/img/slider/five.jpg);
+}
+
+.electronics {
+  background-image: url(/public/img/slider/three.jpg);
+}
+
+.fitness {
+  background-image: url(/public/img/slider/six.jpg);
+}
+
+.toys {
+  background-image: url(/public/img/slider/seven.jpg);
 }
 
 .caption {

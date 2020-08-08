@@ -1,13 +1,13 @@
 //_______________dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
-// const multer = require('multer');
 // ______________ requiring routes
 const layouts = require('./routes/layouts');
 const admin_routes = require('./routes/admin_routes');
 const user_routes = require('./routes/user_routes');
 const login_routes = require('./routes/login_routes')
-
+// ______________ requiring authentication middle ware
+// const authenticate = require('./middleware/authenticate')
 const mongoose = require('mongoose');
 require('dotenv').config();
 const AdminRegistration = require('./models/agent_registration');
@@ -36,7 +36,6 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 
 /*___________db___________*/
-
 mongoose.connect(process.env.DATABASE, {
    useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -94,10 +93,13 @@ app.use(express.static(path.join(__dirname, "")));
   app.use('/login', login_routes);
 
 //____ passport strategies
-passport.use(AdminRegistration.createStrategy());
-passport.serializeUser(AdminRegistration.serializeUser());
-passport.deserializeUser(AdminRegistration.deserializeUser());
+// passport.use(AdminRegistration.createStrategy());
+// passport.serializeUser(AdminRegistration.serializeUser());
+// passport.deserializeUser(AdminRegistration.deserializeUser());
 
+app.get('/agent', (req,res)=>{
+  res.render('agents/agent')
+})
 
 //______________error page.
 app.get('*',(req,res) =>{

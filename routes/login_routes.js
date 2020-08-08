@@ -9,14 +9,25 @@ router.get('/', (req, res) => {
 router.get('/sales_agent', (req, res) => {
     res.render('admins/login_agent')
 })
-//process the username and password
-router.post('/', passport.authenticate('local'), (req, res) => {
-    req.session.user = req.user;
-    res.redirect('dash');
-});
+// //process the username and password
+// router.post('/', passport.authenticate('local'), (req, res) => {
+//     req.session.user = req.user;
+//     res.redirect('/dash');
+// });
 
-router.post('/sales_agent', passport.authenticate('local'), (req, res) => {
-    req.session.user = req.user;
-    res.redirect('dash');
-});
+// router.post('/sales_agent', passport.authenticate('local'), (req, res) => {
+//     req.session.user = req.user;
+//     res.redirect('/dash');
+// });
+
+// -----------
+// (post) the admin signup url processing
+router.post('/login', function(req, res, next){
+passport.authenticate('local', {
+    successRedirect: '/dash',
+    failureRedirect: '/admins/login',
+    failureFlash: true
+})(req, res, next)
+})
+
 module.exports = router;

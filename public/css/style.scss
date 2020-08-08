@@ -117,10 +117,29 @@ textarea:focus, input:focus{
 /*____end of nav bar__________*/
 
 /*____________landing page__________*/ 
-
 .home-inner{
     margin-top: 4rem;
+}
+// _______ background
+// __________ home page
+.index{
     background-image: url(/public/img/slider/five.jpg);
+}
+// _____ furniture
+.furniture{
+    background-image: url(/public/img/slider/five.jpg);
+}
+// _____ electronics
+.electronics{
+    background-image: url(/public/img/slider/three.jpg);
+}
+// _____ fitness
+.fitness{
+    background-image: url(/public/img/slider/six.jpg);
+}
+// ________ toys
+.toys{
+    background-image: url(/public/img/slider/seven.jpg);
 }
 .caption{
     width: 100%;
