@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 // ______________ requiring routes
 const layouts = require('./routes/layouts');
 const admin_routes = require('./routes/admin_routes');
+const agents =  require('./routes/agents_routes');
 const user_routes = require('./routes/user_routes');
 const login_routes = require('./routes/login_routes')
 // ______________ requiring authentication middle ware
@@ -89,6 +90,7 @@ app.use(express.static(path.join(__dirname, "")));
   //_______________ use the routes
   app.use('/', user_routes);
   app.use('/dash', admin_routes);
+  app.use('/sales_agents', agents);
   app.use('/layouts',layouts );
   app.use('/login', login_routes);
 

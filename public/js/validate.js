@@ -232,6 +232,7 @@ function validate_products_form(){
     }else{
         // return true
         event.currentTarget.submit()
+        alert("new purchase recorded")
     }
      
 }

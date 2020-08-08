@@ -103,7 +103,8 @@ html(lang='en')
                 table.table.table1.table-striped
                   thead
                     tr
-                      th #                     
+                      th #   
+                      th Id                  
                       th Customer                             
                       th Phone
                       th Email
@@ -112,6 +113,7 @@ html(lang='en')
                       th Location
                       th Product
                       th Serial Number
+                      th Date of Pay
                       th Initial pay
                       th Next Instalment
                       th Date of Payment
@@ -119,26 +121,30 @@ html(lang='en')
                       th
                   tbody
                     
-                    //- each purchase, index in purchases
+                    each purchase, index in purchases
                         tr(data-toggle='modal', data-target='#details') 
                             th=index+1
-                            td 
+                            //- td 
                               img(src='/img/'+ product.image alt="image" /*style="border-radius:50%;"*/ width="30" height="30" )
                             td #{purchase._id}                          
-                            td #{purchase.product}
-                            td #{purchase.category}
-                            td #{purchase.make}
-                            td #{purchase.serial_no}
+                            td #{purchase.customer_name}
+                            td #{purchase.phone_number}
+                            td #{purchase.email}
+                            td #{purchase.nin}
+                            td #{purchase.referee_number}
+                            td #{purchase.location}
+                            td #{purchase.item_name}
+                            td #{purchase.item_serialnumber}
                             td #{purchase.date}
-                            td #{purchase.price}
                             td #{purchase.initial_pay}
-                            td #{purchase.Pay_Interval}
-                            td #{purchase.stock}
+                            td #{purchase.next_payment_date}
+                            td #{purchase.next_instalment}
+                            td #{purchase.purchase_receipt}
                             td 
-                              a(href="/dash/purchase/"+purchase._id)
+                              a(href="/sales_agents/purchase/"+purchase._id)
                                 button.btn details  
                             td                                 
-                                form(method="post" action='/dash/del_pdt')
+                                form(method="post" action='/sales_agents/delete')
                                     input(type="hidden", placeholder="", name="id", value=purchase._id)
                                     button.btn.btn-block(type="submit") Delete
               .col-12
@@ -147,7 +153,7 @@ html(lang='en')
                   .modal-dialog
                     .modal-content
                       .heading New purchase
-                      form(method='POST' name='add_purchase' action='/dash/add_purchase')
+                      form(method='POST' onsubmit="return validate_products_form()" name='add_purchase' action='/sales_agents/record')
                         // --------------  -------------------                        
                         .form-row
                           .form-group.col-md-6
@@ -205,10 +211,10 @@ html(lang='en')
                             div(class="error" id="next_instalment_err")                             
                         .form-group
                           label(for='purchase_receipt') Receipt
-                          input#purchase_receipt.form-control(name='purchase_receipt', type='text')
+                          input#purchase_receipt.form-control(name='purchase_receipt', type='text' )
                           div(class="error" id="receipt_err")
                         button.btn(type='button', data-dismiss='modal') cancel
-                        button.btn(type='submit' value='submit' onClick="validate_purchases_form()") Record Purchase
+                        button.btn(type='submit' value='submit' onClick="validate_products_form()") Record Purchase
                 // -------end of purchase modal----------
                 // end of table section
                 // ------------footer------------
@@ -220,4 +226,4 @@ html(lang='en')
     script(src='/public/bootstrap/js/popper.min.js')
     script(src='/public/bootstrap/js/bootstrap.min.js')
     script(src='/public/js/main.js')
-    script(src='/public/js/validate.js')
+    script(src='/public/js/validate2.js')

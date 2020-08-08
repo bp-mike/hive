@@ -138,6 +138,7 @@ router.post("/del_pdt", async (req, res) => {
 // router.get('/products', (req,res)=>{
 //   res.render('admins/products')
 // })
+//
 
 //__________ view single agent
 router.get('/agent/:id', (req,res)=>{

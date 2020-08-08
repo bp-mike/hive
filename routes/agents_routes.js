@@ -29,22 +29,18 @@ const upload = multer({
 
 //_________ bringing in the models
 const Purchase =  require('../models/purchases');
-
-router.get('/', (req, res)=>{
-    res.render('agents/agent')
-  })
-
-// __________ our layout
-// router.get('/layout', (req,res)=>{
-//   res.render('admins/layout')
-// })
+//__________ our layout
+router.get('/layout', (req,res)=>{
+  res.render('agents/layout')
+})
 
 //_________ record purchase to the db
 router.post('/record', upload.single('image'), async (req, res) =>{
         const purchase = new Purchase(req.body);
         try{
           await purchase.save()
-          res.redirect('agent')
+          res.redirect('back')
+          res.send('people are awesome')
         }catch (err) {
           res.send("Sorry! Something went wrong.");
           console.log(err)
@@ -77,7 +73,7 @@ router.post("/delete", async (req, res) =>{
 
 //__________ view single purchase
 router.get('/purchase/:id', (req,res)=>{
-  Purchase.findById(req.params.id, (errror, purchase) =>{
+  Purchase.findById(req.params.id, (error, purchase) =>{
     res.render('agents/view_purchase',{//create this view
       purchase:purchase
     })
@@ -87,7 +83,7 @@ router.get('/purchase/:id', (req,res)=>{
 //__________ Goes to edit single purchase page
 router.get('/edit/:id', (req,res)=>{
   Purchase.findById(req.params.id, (errror, purchase) =>{
-    res.render('admins/edit_agent',{
+    res.render('agents/edit_purchase',{
       purchase:purchase
     })
   })

@@ -1,0 +1,70 @@
+extends layout
+block content
+    h1 Edit Purchase Details
+    hr
+    h2 #{purchase.customer_name}
+    hr
+    div.edit_form
+      form(method='POST' /*name='add_purchase'*/ action='/sales_agents/purchase/'+purchase._id)
+        // --------------  -------------------                        
+        .form-row
+          .form-group.col-md-6
+            label(for='customer_name') Customer Name
+            input#customer.form-control(name='customer_name', type='text' value=purchase.customer_name)
+            div(class="error" id="customer_err")
+          .form-group.col-md-6
+            label(for='phone_number') Phone
+            input#phone.form-control(name='phone_number', type='tel' value=purchase.phone_number) 
+            div(class="error" id="phone_err")
+        .form-row
+          .form-group.col-md-6
+            label(for='email') email
+            input#email.form-control(name='email', type='email' value=purchase.email)
+            div(class="error" id="email_err")
+          .form-group.col-md-6
+            label(for='nin') NIN
+            input#nin.form-control(name='nin', type='text' value=purchase.nin) 
+            div(class="error" id="nin_err")
+        .form-row
+          .form-group.col-md-6
+            label(for='referee_number') Referee Number
+            input#ref_no.form-control(name='referee_number', type='tel' value=purchase.referee_number)
+            div(class="error" id="ref_no_err")
+          .form-group.col-md-6
+            label(for='location') Location
+            input#location.form-control(name='location', type='text' value=purchase.location) 
+            div(class="error" id="location_err")                                                        
+        .form-row
+          .form-group.col-md-6
+            label(for='item_name') Product
+            input#product.form-control(name='item_name', type='text' value=purchase.item_name)
+            div(class="error" id="product_err")
+          .form-group.col-md-6
+            label(for='item_serialnumber') Serial Number
+            input#serial_no.form-control(name='item_serialnumber', type='text' value=purchase.item_serialnumber) 
+            div(class="error" id="serial_no_err")  
+        .form-row
+          .form-group.col-md-6
+            label(for='date') Date of purchase
+            input#date.form-control(name='date', type='date' value=purchase.date)
+            div(class="error" id="date_err")
+          .form-group.col-md-6
+            label(for='initial_pay') Initial Pay
+            input#initial_pay.form-control(name='initial_pay', type='number' value=purchase.initial_pay)    
+            div(class="error" id="initial_pay_err")
+        .form-row
+          .form-group.col-md-6
+            label(for='next_payment_date') Next Instalment Date
+            input#next_payment_date.form-control(name='next_payment_date', type='date' value=purchase.next_payment_date)
+            div(class="error" id="instalment_date_err")
+          .form-group.col-md-6
+            label(for='next_instalment') Next Instalment
+            input#next_instalment.form-control(name='next_instalment', type='number' value=purchase.next_instalment)    
+            div(class="error" id="next_instalment_err")                             
+        .form-group
+          label(for='purchase_receipt') Receipt
+          input#purchase_receipt.form-control(name='purchase_receipt', type='text' value=purchase.purchase_receipt)
+          div(class="error" id="receipt_err")
+        a(href="/sales_agents/")
+          button.btn(type='button') Back
+        button.btn(type='submit' value='submit' onClick="validate_products_form()") Update Record
