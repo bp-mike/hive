@@ -9,6 +9,7 @@ html(lang='en')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN', crossorigin='anonymous')
     link(rel='stylesheet', href='/public/css/dash.css')
     link(rel='stylesheet', href='/public/css/extra.css')
+    link(rel="stylesheet" href="/public/calc/calc.css")
     title Agent
   body
     nav.navbar.navbar-expand-md.navbar-light
@@ -25,11 +26,11 @@ html(lang='en')
                 //- a.admin-name(href='#') Bp mike
               ul.sidebar-link
                 li
-                  a(href='/agent')
+                  a(href='/sales_agents')
                     i.fa.fa-home(aria-hidden='true')
                     | Dashboard
                 li
-                  a.active(href='#')
+                  a.active(href='/sales_agents')
                     i.fa.fa-sticky-note-o(aria-hidden='true')
                     | Purchases
                 li
@@ -41,7 +42,7 @@ html(lang='en')
                     i.fa.fa-calendar-check-o(aria-hidden='true')
                     | calender
                 li
-                  a(href='/agent')
+                  a(href='/sales_agents')
                     i.fa.fa-users(aria-hidden='true')
                     | Users
                 li
@@ -97,8 +98,12 @@ html(lang='en')
               .col-12
                 .table-header
                   h3 Recorded Purchases
+                  button.btn(data-toggle='modal', data-target='#calculator')
+                    <i class="fa fa-calculator" aria-hidden="true"></i>
+                    |  Calculator
                   button.btn(data-toggle='modal', data-target='#addpurchase')
-                    i.fa.fa-user-plus(aria-hidden='true')
+                    //- i.fa.fa-user-plus(aria-hidden='true')
+                    <i class="fa fa-product-hunt">+</i>
                     |  New Purchase
                 table.table.table1.table-striped
                   thead
@@ -153,7 +158,7 @@ html(lang='en')
                   .modal-dialog
                     .modal-content
                       .heading New purchase
-                      form(method='POST' onsubmit="return validate_products_form()" name='add_purchase' action='/sales_agents/record')
+                      form(method='POST' name='add_purchase' id="add_purchase" action='/sales_agents/record')
                         // --------------  -------------------                        
                         .form-row
                           .form-group.col-md-6
@@ -216,7 +221,41 @@ html(lang='en')
                         button.btn(type='button', data-dismiss='modal') cancel
                         button.btn(type='submit' value='submit' onClick="validate_products_form()") Record Purchase
                 // -------end of purchase modal----------
-                // end of table section
+              .col-12
+                // --------calculator modal----------
+                #calculator.modal.add_agent_model
+                  .modal-dialog
+                    .modal-content.calc_model
+                      .heading Calculate
+                      .calc
+                          #result
+                            #history
+                              p#history-value
+                            #output
+                              p#output-value
+                          #keyboard
+                            button#clear.operator C
+                            button#backspace.operator CE
+                            button.empty
+                            button.operator(id='/') ÷
+                            button#7.numbers 7
+                            button#8.numbers 8
+                            button#9.numbers 9
+                            button.operator(id='*') ×
+                            button#4.numbers 4
+                            button#5.numbers 5
+                            button#6.numbers 6
+                            button#-.operator −
+                            button#1.numbers 1
+                            button#2.numbers 2
+                            button#3.numbers 3
+                            button.operator(id='+') +
+                            button#7.empty
+                            button#0.numbers 0
+                            button#9.empty
+                            button.operator(id='=') =
+
+              
                 // ------------footer------------
     footer
       .row.justify-content-center
@@ -226,4 +265,5 @@ html(lang='en')
     script(src='/public/bootstrap/js/popper.min.js')
     script(src='/public/bootstrap/js/bootstrap.min.js')
     script(src='/public/js/main.js')
+    script(src="/public/calc/calc.js")
     script(src='/public/js/validate2.js')

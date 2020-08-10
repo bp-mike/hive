@@ -203,7 +203,7 @@ textarea:focus, input:focus {
 }
 
 .icon-bullet::after {
-  content: "3";
+  content: "";
   position: absolute;
   top: 17px;
   left: 35px;
@@ -250,6 +250,10 @@ textarea:focus, input:focus {
   background: red;
 }
 
+.sign-out-model .modal-dialog .modal-content .modal-footer button:active {
+  font-size: .9rem;
+}
+
 /*_______________end of modal signout____________*/
 /*_______________add agent modal_____________*/
 .add_agent_model {
@@ -286,6 +290,10 @@ textarea:focus, input:focus {
 .add_agent_model .modal-dialog .modal-content form .btn:hover {
   background-color: #92CF48;
   color: #282639;
+}
+
+.add_agent_model .modal-dialog .modal-content form .btn:active {
+  font-size: .9rem;
 }
 
 /*______________end of agent model__________*/
@@ -390,6 +398,10 @@ textarea:focus, input:focus {
   color: #282639;
 }
 
+.table-section .container-fluid .row .col-lg-9 .row .col-12 .table-header .btn:active {
+  font-size: .9rem;
+}
+
 .table-section .container-fluid .row .col-lg-9 .row .col-12 .table1 {
   color: #282639;
   background: #fff;
@@ -406,6 +418,7 @@ textarea:focus, input:focus {
 
 .table-section .container-fluid .row .col-lg-9 .row .col-12 .table1 thead {
   font-weight: bold;
+  background: white;
 }
 
 .table2 {

@@ -1,0 +1,51 @@
+extends purchase_layout
+block content
+    .table-header
+        h3 Recorded Purchases
+    table.table.table1.table-striped
+        thead
+        tr(style="background:white;")
+            th #   
+            th Id                  
+            th Customer                             
+            th Phone
+            th Email
+            th NIN
+            th Ref-Number
+            th Location
+            th Product
+            th Serial Number
+            th Date of Pay
+            th Initial pay
+            th Next Instalment
+            th Date of Payment
+            th Receipt
+            th
+        tbody
+        
+        each purchase, index in purchases
+            tr(data-toggle='modal', data-target='#details') 
+                th=index+1
+                //- td 
+                    img(src='/img/'+ product.image alt="image" /*style="border-radius:50%;"*/ width="30" height="30" )
+                td #{purchase._id}                          
+                td #{purchase.customer_name}
+                td #{purchase.phone_number}
+                td #{purchase.email}
+                td #{purchase.nin}
+                td #{purchase.referee_number}
+                td #{purchase.location}
+                td #{purchase.item_name}
+                td #{purchase.item_serialnumber}
+                td #{purchase.date}
+                td #{purchase.initial_pay}
+                td #{purchase.next_payment_date}
+                td #{purchase.next_instalment}
+                td #{purchase.purchase_receipt}
+                td 
+                    a(href="/dash/purchase/"+purchase._id)
+                        button.btn details  
+                td                                 
+                    form(method="post" action='/sales_agents/delete')
+                        input(type="hidden", placeholder="", name="id", value=purchase._id)
+                        button.btn.btn-block(type="submit") Delete

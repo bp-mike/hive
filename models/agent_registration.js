@@ -37,7 +37,7 @@ const adminRegistrationSchema = new mongoose.Schema({
     city:String
 });
 
-// adminRegistrationSchema.plugin(passportLocalMongoose);
+adminRegistrationSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model('adminRegistration', adminRegistrationSchema);
 
 

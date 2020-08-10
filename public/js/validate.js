@@ -23,7 +23,10 @@ function validate_agent_form(){
     // _______ validating first name
     if(firstname == ""){
         printError("f_name_err", "please enter your name");
-    }else{
+    }else  if(firstname.length < 2 || firstname.length > 12){
+        printError("f_name_err", "make sure name is btn 2 to 12 characters");
+    }
+    else{
         var regex = /^[a-zA-Z\s]+$/;
         if(regex.test(firstname) === false){
             printError("f_name_err", "please enter a valid name")
@@ -32,6 +35,7 @@ function validate_agent_form(){
             f_name_err = false;
         }
     }
+   
     // __________ Validating last name
     if(lastname == ""){
         printError("l_name_err", "please enter your name");

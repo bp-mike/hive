@@ -1,0 +1,89 @@
+.calc {
+  margin: 1rem auto;
+  width: 25vw;
+  height: 80vh;
+  background: #eaedef;
+  border-radius: 5px;
+}
+
+.calc_model {
+  width: 26vw;
+  background: #eaedef;
+}
+
+#result {
+  height: 120px;
+}
+
+#result #history {
+  text-align: right;
+  height: 50px;
+  padding-top: 1rem;
+  margin: 0 20px;
+  padding-top: 20px;
+  font-size: 15px;
+  color: #919191;
+}
+
+#result #output {
+  text-align: right;
+  height: 60px;
+  margin: 10px 20px;
+  font-size: 30px;
+  color: black;
+}
+
+#keyboard {
+  height: 400px;
+}
+
+#keyboard button:nth-child(4) {
+  font-size: 20px;
+  background: #20b2aa;
+}
+
+#keyboard button:nth-child(8) {
+  font-size: 20px;
+  background: #ffa500;
+}
+
+#keyboard button:nth-child(12) {
+  font-size: 20px;
+  background: #f08080;
+}
+
+#keyboard button:nth-child(16) {
+  font-size: 20px;
+  background: #7d93e0;
+}
+
+#keyboard button:nth-child(20) {
+  font-size: 20px;
+  background: #9477af;
+}
+
+#keyboard .operator, #keyboard .numbers, #keyboard .empty {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  float: left;
+  border-radius: 50%;
+  border-width: 0;
+  font-weight: bold;
+  font-size: 15px;
+  background: #cfcfcf;
+  cursor: pointer;
+}
+
+#keyboard .operator:active, #keyboard .numbers:active, #keyboard .empty:active {
+  font-size: 13px;
+}
+
+#keyboard .operator:focus, #keyboard .numbers:focus, #keyboard .empty:focus {
+  outline: 0;
+}
+
+#keyboard .numbers, #keyboard .empty {
+  background: #eaedef;
+}
+/*# sourceMappingURL=calc.css.map */

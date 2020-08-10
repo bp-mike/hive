@@ -7,7 +7,7 @@ const admin_routes = require('./routes/admin_routes');
 const agents =  require('./routes/agents_routes');
 const user_routes = require('./routes/user_routes');
 const login_routes = require('./routes/login_routes')
-// ______________ requiring authentication middle ware
+// ______________ requiring authentication middle ware bycrypt
 // const authenticate = require('./middleware/authenticate')
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -98,10 +98,6 @@ app.use(express.static(path.join(__dirname, "")));
 // passport.use(AdminRegistration.createStrategy());
 // passport.serializeUser(AdminRegistration.serializeUser());
 // passport.deserializeUser(AdminRegistration.deserializeUser());
-
-app.get('/agent', (req,res)=>{
-  res.render('agents/agent')
-})
 
 //______________error page.
 app.get('*',(req,res) =>{

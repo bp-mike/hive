@@ -1,0 +1,84 @@
+$grey:#eaedef;
+$greyFont:#919191;
+$greyKeys:#cfcfcf;
+
+.calc{
+    margin: 1rem auto;
+    width: 25vw;
+    height: 80vh;
+    background: $grey;
+    border-radius: 5px;
+}
+
+.calc_model{
+    width: 26vw;
+    background: $grey;
+}
+#result{
+    height: 120px;
+    #history{
+        text-align: right;
+        height: 50px;
+        padding-top: 1rem;
+        margin: 0 20px;
+        padding-top: 20px;
+        font-size: 15px;
+        color: $greyFont;
+        // border:2px solid red;
+    }
+    #output{
+        text-align: right;
+        height: 60px;
+        margin: 10px 20px;
+        font-size: 30px;
+        color: black;
+    }
+}
+#keyboard{
+    height: 400px;
+    button{
+        &:nth-child(4){
+            font-size: 20px;
+            background: #20b2aa;
+        }
+        &:nth-child(8){
+            font-size: 20px;
+            background: #ffa500;
+        }
+        &:nth-child(12){
+            font-size: 20px;
+            background: #f08080;
+        }
+        &:nth-child(16){
+            font-size: 20px;
+            background: #7d93e0;
+        }
+        &:nth-child(20){
+            font-size: 20px;
+            background: #9477af;
+        }
+        
+    
+    }
+    .operator, .numbers,.empty{
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+        float: left;
+        border-radius: 50%;
+        border-width: 0;
+        font-weight: bold;
+        font-size: 15px;
+        background: $greyKeys;
+        cursor: pointer;
+        &:active{
+            font-size: 13px;
+        }
+        &:focus{
+            outline: 0;
+        }
+    }
+    .numbers, .empty{
+        background: $grey;
+    }
+}

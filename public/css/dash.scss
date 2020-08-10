@@ -177,7 +177,7 @@ textarea:focus, input:focus{
   }
   
   .icon-bullet::after {
-    content: "3";
+    content: "";
     position: absolute;
     top: 17px;
     left: 35px;
@@ -223,6 +223,9 @@ textarea:focus, input:focus{
           .sign-out-btn{
             background: red;
           }
+          &:active{
+            font-size: .9rem;
+          }
         }
        
       }
@@ -260,7 +263,10 @@ textarea:focus, input:focus{
           &:hover{
             background-color: $greenNeon;
             color: $purpleDark;
-          }          
+          }  
+          &:active{
+            font-size: .9rem;
+          }        
         }
         // select{
         //   option{
@@ -338,7 +344,6 @@ textarea:focus, input:focus{
 /*_____________________end of cards___________________*/ 
 
 
-
 /*___________________table section____________________*/
 .table-section{
   .container-fluid{
@@ -366,6 +371,10 @@ textarea:focus, input:focus{
                       background: $greenNeon;
                       color: $purpleDark;
                   }
+                  &:active{
+                    font-size: .9rem;
+                  }
+                  
               }
           }
             
@@ -383,7 +392,7 @@ textarea:focus, input:focus{
               }
               thead{
                 font-weight: bold;
-                
+                background: white;
               }
             }
           }
@@ -393,7 +402,7 @@ textarea:focus, input:focus{
     }    
   }
 }
-// __________table for showing agent details
+// __________table for showing agent + other  details
 .table2{
   padding: 2rem;
   color: $purpleDark;

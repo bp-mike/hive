@@ -1,0 +1,54 @@
+extends purchase_layout
+block content
+    h1 #{purchase.customer_name}
+    //- img(src='/img/'+ product.image alt="image" width="60" height="70" )
+    hr    
+    table.table2
+        tbody
+            tr
+                th purchase ID
+                td #{purchase._id}
+            tr
+                th Phone Number
+                td #{purchase.phone_number}
+            tr
+                th Email
+                td #{purchase.email}
+            tr
+                th NIN
+                td #{purchase.nin}
+            tr
+                th Referee Numbere
+                td #{purchase.referee_number}
+            tr
+                th Location
+                td #{purchase.location}
+            tr
+                th Product
+                td #{purchase.item_name}
+            tr
+                th Serial Number
+                td #{purchase.item_serialnumber}
+            tr
+                th Date of Pay
+                td #{purchase.date}
+            tr
+                th Initial pay
+                td #{purchase.initial_pay}
+            tr
+                th Next Pay Date
+                td #{purchase.next_payment_date}
+            tr
+                th Next Instalment
+                td #{purchase.next_instalment}
+            tr
+                th Receipt
+                td #{purchase.purchase_receipt}
+          
+            tr
+                td
+                    a(href='/dash/purchases')
+                        button.btn(type="button") Back
+    
+            
+

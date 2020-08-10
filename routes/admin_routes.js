@@ -30,39 +30,68 @@ const upload = multer({
 //_________ bringing in the models
 const AdminRegistration = require('../models/agent_registration');
 const Product =  require('../models/add_products');
+const Purchase =  require('../models/purchases');
 
 // __________ init multer
-
-router.get('/', (req, res)=>{
-    res.render('admins/splash')
-  })
-
-router.get('/dashboard', (req, res)=>{
-  res.render('admins/dash')
-})
-
-
+// ___________ layouts
 router.get('/layout', (req,res)=>{
   res.render('admins/layout')
 })
-
+// ______ products
 router.get('/pdts_layout', (req,res)=>{
   res.render('admins/pdts_layout')
 })
+// ______ purchases
+router.get('/purchase_layout', (req,res)=>{
+  res.render('admins/purchase_layout')
+})
+
+// _________ splash
+router.get('/', (req, res)=>{
+    res.render('admins/splash')
+  })
+// ________ dashboard
+// router.get('/dashboard', (req, res)=>{
+// AdminRegistration.find({}, (err, agents,purchases)=>{
+//   if(err){
+//       console.log(err)
+//   }else{
+      
+//       res.render('admins/dash',{
+//           agents:agents,          
+//       })
+//   }
+// })
+// })
+
+
+// __________ dashboard purchase
+router.get('/dashboard', (req, res)=>{
+  Purchase.find({}, (err, purchases)=>{
+    if(err){
+        console.log(err)
+    }else{          
+        res.render('admins/dash',{
+          purchases:purchases
+        })
+    }
+  }) 
+})
 
 //_________ posting agent to the db
-    router.post("/register", async (req, res) => {
-      try {
-        const agents = new AdminRegistration(req.body);
-        await AdminRegistration.register(agents, req.body.password, (err) => {
-          if (err) { throw err }
-          res.redirect('agents')
-        })
-      } catch (err) {
-         res.status(400).send('Sorry! Something went wrong.')
-         console.log(err)
-      }
-    })
+  router.post("/register", async (req, res) => {
+    try {
+      const agents = new AdminRegistration(req.body);
+      
+      await AdminRegistration.register(agents, req.body.password, (err) => {
+        if (err) { throw err }
+        res.redirect('agents')
+      })
+    } catch (err) {
+        res.status(400).send('Sorry! Something went wrong.')
+        console.log(err)
+    }
+  })
     
 
 // _____ posting a product to the db
@@ -153,8 +182,7 @@ router.get('/agent/:id', (req,res)=>{
 // ___________ view single product
 router.get('/product/:id', (req,res)=>{
   Product.findById(req.params.id, (errror, product) =>{
-    res.render('admins/view_product',{
-      
+    res.render('admins/view_product',{      
       product:product
     })
   })
@@ -200,5 +228,37 @@ router.post('/product/:id', async (req, res) =>{
     console.log(err)
  }
 })
+
+// _______________ purchases
+router.get('/purchases', (req, res)=>{
+  Purchase.find({}, (err, purchases)=>{
+    if(err){
+        console.log(err)
+    }else{          
+        res.render('admins/purchases',{
+          purchases:purchases
+        })
+    }
+  }) 
+})
+
+//__________ view single purchase records
+router.get('/purchase/:id', (req,res)=>{
+  Purchase.findById(req.params.id, (error, purchase) =>{
+    res.render('admins/view_purchase',{
+      purchase:purchase
+    })
+  })
+})
+
+//_______________ delete purhase data 
+// router.post("/delete_purchase", async (req, res) =>{  
+//   try {
+//     await Purchase.deleteOne({_id: req.body.id })
+//     res.redirect('back')
+//   } catch (error) {
+//      res.status(400).send("unable to delete to database");
+//   }
+// })
 
 module.exports = router;

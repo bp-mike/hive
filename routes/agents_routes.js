@@ -60,9 +60,8 @@ router.get('/', (req, res)=>{
   })
 })
 
-//_______________ delete data 
-router.post("/delete", async (req, res) =>{
-  
+//_______________ delete purhase data 
+router.post("/delete", async (req, res) =>{  
   try {
     await Purchase.deleteOne({_id: req.body.id })
     res.redirect('back')
