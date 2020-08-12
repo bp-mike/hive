@@ -21,38 +21,38 @@ html(lang='en')
             // sidebar
             .col-xl-2.col-lg-3.col-md-4.sidebar.fixed-top
               a.navbar-brand.admin(href='#') Agents
-              .admin-info
+              //- .admin-info
                 //- img(src='/public/img/91.jpg', alt='', width='')
                 //- a.admin-name(href='#') Bp mike
               ul.sidebar-link
-                li
-                  a(href='/sales_agents')
-                    i.fa.fa-home(aria-hidden='true')
-                    | Dashboard
+                //- li
+                //-   a(href='/sales_agents')
+                //-     i.fa.fa-home(aria-hidden='true')
+                //-     | Dashboard
                 li
                   a.active(href='/sales_agents')
                     i.fa.fa-sticky-note-o(aria-hidden='true')
                     | Purchases
-                li
-                  a(href='#')
-                    i.fa.fa-bookmark-o(aria-hidden='true')
-                    | item
-                li
-                  a(href='#')
-                    i.fa.fa-calendar-check-o(aria-hidden='true')
-                    | calender
-                li
-                  a(href='/sales_agents')
-                    i.fa.fa-users(aria-hidden='true')
-                    | Users
-                li
-                  a(href='#')
-                    i.fa.fa-table(aria-hidden='true')
-                    | Tables
-                li
-                  a(href='#')
-                    i.fa.fa-cog(aria-hidden='true')
-                    | Settings
+                //- li
+                //-   a(href='#')
+                //-     i.fa.fa-bookmark-o(aria-hidden='true')
+                //-     | item
+                //- li
+                //-   a(href='#')
+                //-     i.fa.fa-calendar-check-o(aria-hidden='true')
+                //-     | calender
+                //- li
+                //-   a(href='/sales_agents')
+                //-     i.fa.fa-users(aria-hidden='true')
+                //-     | Users
+                //- li
+                //-   a(href='#')
+                //-     i.fa.fa-table(aria-hidden='true')
+                //-     | Tables
+                //- li
+                //-   a(href='#')
+                //-     i.fa.fa-cog(aria-hidden='true')
+                //-     | Settings
             // end of sidebar
             // top-nav
             .col-xl-10.col-lg-9.col-md-8.fixed-top.upper-nav
@@ -64,14 +64,14 @@ html(lang='en')
                 .col-md-5
                 .col-md-3
                   ul.navbar-nav
-                    li.nav-item.icon-parent
+                    //- li.nav-item.icon-parent
                       a.nav-link.icon-bullet(href='#')
                         i.fa.fa-comments
-                    li.nav-item.icon-parent
+                    //- li.nav-item.icon-parent
                       a.nav-link.icon-bullet(href='#')
                         i.fa.fa-bell
                     li.nav-item.sign-out
-                      a.nav-link(href='#', data-toggle='modal', data-target='#sign-out')
+                      a.nav-link(data-toggle='modal', data-target='#sign-out')
                         i.fa.fa-sign-out
             // end of top-nav
             // end of nvbar
@@ -87,7 +87,7 @@ html(lang='en')
             | Are you sure you want to leave?
           .modal-footer
             button.btn(type='button', data-dismiss='modal') cancel
-            button.btn.btn-danger.sign-out-btn(type='button', data-dismiss='modal') Sign out
+            a.btn.btn-danger.sign-out-btn(type='button', href='/dash') Sign out
     // end of model
     // table section
     section.table-section
@@ -219,7 +219,7 @@ html(lang='en')
                           input#purchase_receipt.form-control(name='purchase_receipt', type='text' )
                           div(class="error" id="receipt_err")
                         button.btn(type='button', data-dismiss='modal') cancel
-                        button.btn(type='submit' value='submit' onClick="validate_products_form()") Record Purchase
+                        button.btn(type='submit' value='submit' onClick="validate_purchases_form") Record Purchase
                 // -------end of purchase modal----------
               .col-12
                 // --------calculator modal----------

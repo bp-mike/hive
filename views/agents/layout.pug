@@ -20,11 +20,11 @@ html(lang='en')
             // sidebar
             .col-xl-2.col-lg-3.col-md-4.sidebar.fixed-top
               a.navbar-brand.admin(href='#') Agents
-              .admin-info
+              //- .admin-info
                 //- img(src='/public/img/91.jpg', alt='', width='')
                 //- a.admin-name(href='#') Bp mike
               ul.sidebar-link
-                li
+                //- li
                   a(href='/agent')
                     i.fa.fa-home(aria-hidden='true')
                     | Dashboard
@@ -32,23 +32,23 @@ html(lang='en')
                   a.active(href='#')
                     i.fa.fa-sticky-note-o(aria-hidden='true')
                     | Purchases
-                li
+                //- li
                   a(href='#')
                     i.fa.fa-bookmark-o(aria-hidden='true')
                     | item
-                li
+                //- li
                   a(href='#')
                     i.fa.fa-calendar-check-o(aria-hidden='true')
                     | calender
-                li
+                //- li
                   a(href='/agent')
                     i.fa.fa-users(aria-hidden='true')
                     | Users
-                li
+                //- li
                   a(href='#')
                     i.fa.fa-table(aria-hidden='true')
                     | Tables
-                li
+                //- li
                   a(href='#')
                     i.fa.fa-cog(aria-hidden='true')
                     | Settings
@@ -63,10 +63,10 @@ html(lang='en')
                 .col-md-5
                 .col-md-3
                   ul.navbar-nav
-                    li.nav-item.icon-parent
+                    //- li.nav-item.icon-parent
                       a.nav-link.icon-bullet(href='#')
                         i.fa.fa-comments
-                    li.nav-item.icon-parent
+                    //- li.nav-item.icon-parent
                       a.nav-link.icon-bullet(href='#')
                         i.fa.fa-bell
                     li.nav-item.sign-out
@@ -86,7 +86,7 @@ html(lang='en')
             | Are you sure you want to leave?
           .modal-footer
             button.btn(type='button', data-dismiss='modal') cancel
-            button.btn.btn-danger.sign-out-btn(type='button', data-dismiss='modal') Sign out
+            a.btn.btn-danger.sign-out-btn(href="/dash") Sign out 
     // end of model
     // table section
     section.table-section

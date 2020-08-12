@@ -20,9 +20,9 @@ html(lang='en')
             // sidebar
             .col-xl-2.col-lg-3.col-md-4.sidebar.fixed-top
               a.navbar-brand.admin(href='#') Admin
-              .admin-info
-                img(src='/public/img/91.jpg', alt='', width='')
-                a.admin-name(href='#') Bp mike
+              //- .admin-info
+              //-   img(src='/public/img/91.jpg', alt='', width='')
+              //-   a.admin-name(href='#') Bp mike
               ul.sidebar-link
                 li
                   a(href='/dash/dashboard')
@@ -33,10 +33,10 @@ html(lang='en')
                     i.fa.fa-sticky-note-o(aria-hidden='true')
                     | Products
                 li
-                  a(href='#')
-                    i.fa.fa-bookmark-o(aria-hidden='true')
-                    | item
-                li
+                  a(href='/dash/purchases')
+                    i.fa.fa-sticky-note-o(aria-hidden='true')
+                    | Records
+                //- li
                   a(href='#')
                     i.fa.fa-calendar-check-o(aria-hidden='true')
                     | calender
@@ -44,11 +44,11 @@ html(lang='en')
                   a(href='/dash/agents')
                     i.fa.fa-users(aria-hidden='true')
                     | Users
-                li
+                //- li
                   a(href='#')
                     i.fa.fa-table(aria-hidden='true')
                     | Tables
-                li
+                //- li
                   a(href='#')
                     i.fa.fa-cog(aria-hidden='true')
                     | Settings
@@ -63,10 +63,10 @@ html(lang='en')
                 .col-md-5
                 .col-md-3
                   ul.navbar-nav
-                    li.nav-item.icon-parent
+                    //- li.nav-item.icon-parent
                       a.nav-link.icon-bullet(href='#')
                         i.fa.fa-comments
-                    li.nav-item.icon-parent
+                    //- li.nav-item.icon-parent
                       a.nav-link.icon-bullet(href='#')
                         i.fa.fa-bell
                     li.nav-item.sign-out
@@ -86,7 +86,7 @@ html(lang='en')
             | Are you sure you want to leave?
           .modal-footer
             button.btn(type='button', data-dismiss='modal') cancel
-            button.btn.btn-danger.sign-out-btn(type='button', data-dismiss='modal') Sign out
+            a.btn.btn-danger.sign-out-btn(type='button', href='/dash') Sign out
     // end of model
     // table section
     section.table-section
@@ -207,53 +207,6 @@ html(lang='en')
                         button.btn(type='button', data-dismiss='modal') cancel
                         button.btn(type='submit' value='submit' onClick="validate_products_form()") Add
                 // -------end of product modal----------
-
-                // ------------- details modal -----------
-                //- .col-12
-                  #details.modal.add_agent_model
-                    .modal-dialog
-                      .modal-content
-                        .heading Sales Agent Details
-                        table.table2
-                          tbody
-                            //________ loop through agents
-                            each product in products
-                              tr
-                                th ID
-                                td #{product._id}
-                              tr
-                                th product
-                                td #{product.product}
-                              tr
-                                th category
-                                td #{product.category}
-                              tr
-                                th User Name
-                                td #{agent.username}
-                              tr
-                                th NIN
-                                td #{agent.nin}
-                              tr
-                                th Gender
-                                td #{agent.gender}
-                              tr
-                                th Email
-                                td #{agent.email}
-                              tr
-                                th password
-                                td #{agent.password}
-                              tr
-                                th Address
-                                td #{agent.address}
-                              tr
-                                th city
-                                td #{agent.city}
-                              tr
-                                td
-                                  button.btn(type="button" data-dismiss="modal") close
-                                td
-                                  button.btn Edit
-                // ----------- end of details modal---------
                 // end of table section
                 // ------------footer------------
     footer

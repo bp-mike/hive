@@ -12,14 +12,15 @@ html(lang='en')
   body
     .card.border-success.mb-3.jumbotron(style='max-width: 30rem;')
       .card-header Sign in
-      form(action="/login" method="POST" name="manager_login")
+      form(action="/login/" method="POST" name="manager_login")
         .form-group
           label(for='username') username
           input#username.form-control(type='text', placeholder='username')
         .form-group
           label(for='Password') Password
           input#Password1.form-control(type='password', placeholder='password')
-        button.btn Login
+        a.btn(href="/dash/dashboard")
+          | Login        
         a.btn(href='/dash') Back
     script(src='/public/bootstrap/js/jquery-3.5.1.min.js')
     script(src='/public/bootstrap/js/popper.min.js')

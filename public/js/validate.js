@@ -9,7 +9,7 @@ function printError(elemId, hintMsg){
 function validate_agent_form(){
     var firstname = document.add_agent.firstname.value;
     var lastname = document.add_agent.lastname.value;
-    var username = document.add_agent.username.value;
+    // var username = document.add_agent.username.value;
     var gender = document.add_agent.gender.value;
     var email = document.add_agent.email.value;
     var nin = document.add_agent.nin.value;
@@ -18,14 +18,15 @@ function validate_agent_form(){
     var address = document.add_agent.address.value;
 
     // ___ Defining error varriables with defaul value
-    var f_name_err = l_name_err = user_name_err = gender_err = email_err = nin_err = pwd_err = city_err = address_err = true;
+    var f_name_err = l_name_err /*= user_name_err*/ = gender_err = email_err = nin_err = pwd_err = city_err = address_err = true;
 
     // _______ validating first name
     if(firstname == ""){
         printError("f_name_err", "please enter your name");
-    }else  if(firstname.length < 2 || firstname.length > 12){
-        printError("f_name_err", "make sure name is btn 2 to 12 characters");
     }
+    // else  if(firstname.length < 2 || firstname.length > 12){
+    //     printError("f_name_err", "make sure name is btn 2 to 12 characters");
+    // }
     else{
         var regex = /^[a-zA-Z\s]+$/;
         if(regex.test(firstname) === false){
@@ -49,19 +50,26 @@ function validate_agent_form(){
         }
     }
 
-    // _______ Validating user name
-    if(username == ""){
-        printError("user_name_err", "please enter your name");
-    }else{
-        var regex = /^[a-zA-Z\s]+$/;
-        if(regex.test(username) === false){
-            printError("user_name_err", "please enter a valid name")
-        }else{
-            printError("user_name_err", "");
-            user_name_err = false;
-        }
-    }
+    // __________ Validating user name --- relook at
+    // if(username.length == ""){
+    //     printError("user_name_err", "please enter your name");
+    // }else{
+    //     var regex = /^[a-zA-Z\s]+$/;
+    //     if(regex.test(username) === false){
+    //         printError("user_name_err", "please enter a valid name")
+    //     }else{
+    //         printError("user_name_err", "");
+    //         user_name_err = false;
+    //     }
+    // }
 
+    // _____ Validating gender
+    if(gender == ""){
+        printError("gender_err", "please select your gender");
+    }else{
+        printError("gender_err", "");
+        gender_err = false;
+    }
     // _________ Validate email address
     if(email == ""){
         printError("email_err", "please enter your Email Address");
@@ -74,13 +82,6 @@ function validate_agent_form(){
             email_err = false;
         }
     }
-    // _________ Validating password
-    if(password == ""){
-        printError("pwd_err", "please enter your password");
-    }else{
-        printError("pwd_err", "");
-        pwd_err = false;
-    }
 
     // _________ Validating nin
     if(nin == ""){
@@ -90,6 +91,20 @@ function validate_agent_form(){
         nin_err = false;
     }
 
+    // _________ Validating password
+    if(password == ""){
+        printError("pwd_err", "please enter your password");
+    }else{
+        printError("pwd_err", "");
+        pwd_err = false;
+    }
+    // ____ Validating city
+    if(city == "Choose..."){
+        printError("city_err", "please select the city you are From");
+    }else{
+        printError("city_err", "");
+        city_err = false;
+    }
     // _________ validating Address
     if(address == ""){
         printError("address_err", "please enter your Address");
@@ -98,24 +113,10 @@ function validate_agent_form(){
         address_err = false;
     }
 
-    // ____ Validating city
-    if(city == "Choose..."){
-        printError("city_err", "please select the city you are From");
-    }else{
-        printError("city_err", "");
-        city_err = false;
-    }
-
-    // _____ Validating gender
-    if(gender == ""){
-        printError("gender_err", "please select your gender");
-    }else{
-        printError("gender_err", "");
-        gender_err = false;
-    }
+   
     
     // _______ Preventing the form from being submited if their are any errors
-    if((f_name_err || l_name_err || user_name_err || gender_err || email_err || nin_err || pwd_err || city_err || address_err) == true){
+    if((f_name_err || l_name_err /*|| user_name_err*/ || gender_err || email_err || nin_err || pwd_err || city_err || address_err) == true){
         // return false
         event.preventDefault()
     }else{
@@ -236,7 +237,7 @@ function validate_products_form(){
     }else{
         // return true
         event.currentTarget.submit()
-        alert("new purchase recorded")
+        // alert("new purchase recorded")
     }
      
 }

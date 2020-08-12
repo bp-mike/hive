@@ -91,13 +91,13 @@ app.use(express.static(path.join(__dirname, "")));
   app.use('/', user_routes);
   app.use('/dash', admin_routes);
   app.use('/sales_agents', agents);
-  app.use('/layouts',layouts );
+  // app.use('/layouts',layouts );
   app.use('/login', login_routes);
 
 //____ passport strategies
-// passport.use(AdminRegistration.createStrategy());
-// passport.serializeUser(AdminRegistration.serializeUser());
-// passport.deserializeUser(AdminRegistration.deserializeUser());
+passport.use(AdminRegistration.createStrategy());
+passport.serializeUser(AdminRegistration.serializeUser());
+passport.deserializeUser(AdminRegistration.deserializeUser());
 
 //______________error page.
 app.get('*',(req,res) =>{

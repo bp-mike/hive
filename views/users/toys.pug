@@ -69,13 +69,24 @@
 
       <!---------products------------->
       <div class="card-deck">
-        each product, index in products
-          div.card
-            img(src='/img/'+ product.image alt="image" width="50" class="card-img-top" )
-            .card-body.text-left
-              .name name: #{product.product}
-              .brand Brand/make: #{product.make}
-              .price price: #{product.price}
+        each product in products
+          if product.category == "toys"
+            div.card
+              img(src='/img/'+ product.image alt="image" width="50" class="card-img-top" )
+              .card-body.text-left
+                table
+                  tr 
+                    th
+                      a(href="/product/"+product._id)
+                        | #{product.product}
+                  tr
+                    th Price                  
+                  tr
+                    td #{product.price}.00ugx
+                  tr
+                    th Make
+                  tr
+                    td #{product.make}
       </div>
       <!---------end of products----------->
     </div>
@@ -92,6 +103,7 @@
         <a href="www.facebook.com" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
         <a href="www.twitter.com" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
         <a href="www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="/dash" target="_blank"><i class="fa fa-user-o" aria-hidden="true"></i>Admin</a>
       </div>
       <hr class="socket">
       span Covid-Stores &copy;bpmike | Designed by Otieno Mike

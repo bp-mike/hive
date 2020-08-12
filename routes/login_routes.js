@@ -13,9 +13,12 @@ router.get('/sales_agent', (req, res) => {
     res.render('admins/login_agent')
 })
 //process the username and password
-router.post('/', passport.authenticate('local'), (req, res) => {
+router.post('/', passport.authenticate('local'), (err,req, res) => {
     req.session.user = req.user;
-    res.redirect('/dash');
+    res.redirect('/dash/dashboard');
+    if(err){
+        console.log(err)
+    }
 });
 
 // router.post('/sales_agent', passport.authenticate('local'), (req, res) => {

@@ -34,7 +34,12 @@ const adminRegistrationSchema = new mongoose.Schema({
     gender: String,
     nin:String,
     address:String,
-    city:String
+    city:String,
+    role:{
+      type:String,
+      default:"agent",
+      enum:["agent", "admin"]
+    }
 });
 
 adminRegistrationSchema.plugin(passportLocalMongoose);

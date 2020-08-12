@@ -63,6 +63,20 @@ router.get('/', (req, res)=>{
 //   }
 // })
 // })
+// router.get('/', async (req, res)=>{
+//   try{
+//     let items = await Purchase.find();
+//     let agents = await AdminRegistration.find()
+//     if(req.query.name){
+//       items = await Purchase.find({name:req.query.name});
+//     }res.render('admins/dash',{
+//       products : items,
+//       agents:agents
+//     });
+//   }catch(err){
+//     res.status(400).send("unable to find items in the db")
+//   }
+// })
 
 
 // __________ dashboard purchase
